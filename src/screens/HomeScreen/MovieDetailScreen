@@ -1,0 +1,9 @@
+import React, {useState} from 'react';
+import {View, Text, Image, ScrollView, StyleSheet} from 'react-native';
+
+import HeaderTop from '../../components/Header/HeaderTop';
+import {allImage, allcolor} from '../../constants/';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
