@@ -38,7 +38,7 @@ const MyTabs = () => {
         },
       }}>
       <Tab.Screen
-        name="Icon1"
+        name="HomeStack"
         component={HomeStack}
         options={{
           tabBarLabel: 'In Theatres',
@@ -48,7 +48,7 @@ const MyTabs = () => {
         }}
       />
       <Tab.Screen
-        name="Icon2"
+        name="UpcomingStack"
         component={UpComingStack}
         options={{
           tabBarLabel: 'Up Coming',
@@ -58,7 +58,7 @@ const MyTabs = () => {
         }}
       />
       <Tab.Screen
-        name="Icon3"
+        name="TheatreScreen"
         component={TheatreScreen}
         options={{
           tabBarLabel: 'Theatres',
@@ -68,7 +68,7 @@ const MyTabs = () => {
         }}
       />
       <Tab.Screen
-        name="Icon4"
+        name="NewStack"
         component={NewStack}
         options={{
           tabBarLabel: 'News',
@@ -79,7 +79,7 @@ const MyTabs = () => {
         }}
       />
       <Tab.Screen
-        name="Icon5"
+        name="SettingScreen"
         component={SettingScreen}
         options={{
           tabBarLabel: 'Settings',
@@ -119,7 +119,7 @@ const UpComingStack = () => {
 const MyStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="MyTabs"
+      // initialRouteName="MyTabs"
       screenOptions={{headerShown: false}}>
       <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
       <Stack.Screen name="SignInScreen" component={SignInScreen} />

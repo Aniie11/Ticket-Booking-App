@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -8,14 +8,7 @@ import {allcolor} from '../../constants';
 
 const HeaderTop = ({onpress, text, leftIcon, rightIcon}) => {
   return (
-    <View
-      style={{
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        marginTop: hp(1),
-        paddingHorizontal: wp(5),
-      }}>
+    <View style={style.container}>
       <TouchableOpacity onPress={onpress}>
         {leftIcon ? (
           <Image
@@ -51,3 +44,12 @@ const HeaderTop = ({onpress, text, leftIcon, rightIcon}) => {
 };
 
 export default HeaderTop;
+const style = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: hp(1),
+    paddingHorizontal: wp(5),
+  },
+});

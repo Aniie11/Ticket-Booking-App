@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, StyleSheet} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -8,18 +8,11 @@ import {allcolor, allImage} from '../../constants';
 
 const Button1 = ({txt}) => {
   return (
-    <View
-      style={{
-        height: hp(5),
-        width: wp(40),
-        borderWidth: 1,
-        borderRadius: wp(2),
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderColor: allcolor.theme1,
-        flexDirection: 'row',
-      }}>
-      <Text style={{fontWeight: 'bold', color: allcolor.theme1}}>{txt}</Text>
+    <View style={[style.container, {borderColor: allcolor.theme1}]}>
+      <Text
+        style={{fontWeight: 'bold', color: allcolor.theme1, fontSize: wp(3)}}>
+        {txt}
+      </Text>
       <Image
         resizeMode="contain"
         style={{
@@ -35,3 +28,15 @@ const Button1 = ({txt}) => {
 };
 
 export default Button1;
+const style = StyleSheet.create({
+  container: {
+    height: hp(5),
+    width: wp(40),
+    borderWidth: 1,
+    borderRadius: wp(2),
+    justifyContent: 'center',
+    alignItems: 'center',
+
+    flexDirection: 'row',
+  },
+});

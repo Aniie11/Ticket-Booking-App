@@ -248,11 +248,13 @@ const NewScreen = ({navigation, route}) => {
                       paddingHorizontal: wp(2),
                       marginTop: hp(2),
                     }}>
-                    <Text style={{fontSize: wp(3)}}>{item.txt}</Text>
+                    <Text style={{fontSize: wp(4), fontWeight: 'bold'}}>
+                      {item.txt}
+                    </Text>
 
                     <Text
                       numberOfLines={5}
-                      style={{fontSize: wp(2), textAlign: 'justify'}}>
+                      style={{fontSize: wp(3), textAlign: 'justify'}}>
                       {item.txt1}
                     </Text>
                     <View

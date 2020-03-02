@@ -7,7 +7,6 @@ import {
 import HeaderTop from '../../../components/Header/HeaderTop';
 import {allcolor, allImage} from '../../../constants';
 import Button1 from '../../../components/Button/Button1';
-import {useSafeArea} from 'react-native-safe-area-context';
 
 const NewsReviewScreen = ({navigation, route}) => {
   const data = route.params.data;
@@ -38,7 +37,9 @@ const NewsReviewScreen = ({navigation, route}) => {
 
           <View
             style={{flexShrink: 1, paddingHorizontal: wp(5), marginTop: hp(5)}}>
-            <Text style={{fontSize: wp(4)}}>{data.txt}</Text>
+            <Text style={{fontSize: wp(4), fontWeight: 'bold'}}>
+              {data.txt}
+            </Text>
 
             <Text style={{fontSize: wp(3), textAlign: 'justify'}}>
               {data.txt1}
@@ -46,7 +47,9 @@ const NewsReviewScreen = ({navigation, route}) => {
           </View>
         </View>
         <View style={{marginTop: hp(2), paddingHorizontal: hp(4)}}>
-          <Text>Genre: {data.Genre} |</Text>
+          <Text style={{fontWeight: 'bold'}}>Genre: </Text>
+          <Text> {data.Genre} |</Text>
+
           <Text style={{marginTop: hp(2), fontSize: wp(4), fontWeight: 'bold'}}>
             Cast
           </Text>

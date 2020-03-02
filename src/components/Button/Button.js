@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import {allcolor} from '../../constants/';
 import {
   widthPercentageToDP as wp,
@@ -9,19 +9,27 @@ import {
 const Button = ({text, txtOverride, txt1override}) => {
   return (
     <View
-      style={{
-        backgroundColor: allcolor.theme1,
-        height: hp(6),
+      style={[
+        style.container,
+        {
+          backgroundColor: allcolor.theme1,
 
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: wp(2),
-        marginTop: hp(5),
-        ...txtOverride,
-      }}>
+          ...txtOverride,
+        },
+      ]}>
       <Text style={{color: 'white', ...txt1override}}>{text}</Text>
     </View>
   );
 };
 
 export default Button;
+const style = StyleSheet.create({
+  container: {
+    height: hp(6),
+
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: wp(2),
+    marginTop: hp(5),
+  },
+});
