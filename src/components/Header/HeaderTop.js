@@ -4,6 +4,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import {allcolor} from '../../constants';
 
 const HeaderTop = ({onpress, text, leftIcon, rightIcon}) => {
   return (
@@ -26,7 +27,13 @@ const HeaderTop = ({onpress, text, leftIcon, rightIcon}) => {
           <View />
         )}
       </TouchableOpacity>
-      <Text style={{fontWeight: 'bold', textAlign: 'center', fontSize: wp(4)}}>
+      <Text
+        style={{
+          fontWeight: 'bold',
+          textAlign: 'center',
+          fontSize: wp(4),
+          color: allcolor.textColor,
+        }}>
         {text}
       </Text>
 

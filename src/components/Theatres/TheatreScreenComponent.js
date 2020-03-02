@@ -6,10 +6,11 @@ import {
 } from 'react-native-responsive-screen';
 import {allImage} from '../../constants';
 import Card from '../../components/Card/Card';
+import Tick from '../Theatres/Tick';
 
 const TheatreScreenComponent = ({img, txt, txt1, txt2, txt3}) => {
   return (
-    <Card styleOverride={{marginHorizontal: wp(0)}}>
+    <Card>
       <View style={{flexDirection: 'row'}}>
         <Image
           style={{
@@ -75,6 +76,9 @@ const TheatreScreenComponent = ({img, txt, txt1, txt2, txt3}) => {
               source={allImage.menutheatre}
             />
           </View>
+          <Tick styleOverride={{marginLeft: wp(35)}} />
+          <Tick styleOverride={{marginLeft: wp(27)}} />
+          <Tick />
         </View>
       </View>
     </Card>

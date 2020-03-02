@@ -22,6 +22,7 @@ const datas = [
   '13',
   '14',
   '15',
+  '16',
 ];
 const TicketSelect = ({txt, selectedTicket, selectTicket}) => {
   return (
@@ -33,6 +34,7 @@ const TicketSelect = ({txt, selectedTicket, selectTicket}) => {
         {datas.map((item, index) => {
           return (
             <TouchableOpacity
+              key={index}
               onPress={() => selectTicket({item: item, index: index})}>
               <View
                 style={[

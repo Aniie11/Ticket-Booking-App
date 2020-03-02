@@ -13,7 +13,7 @@ import Button1 from '../../components/Button/Button1';
 const date = [
   {month: 'MAR', date: '09', day: 'FRIDAY'},
   {month: 'MAR', date: '09', day: 'FRIDAY'},
-  {month: 'MAR', date: '10', day: 'SATURDAY'},
+  {month: 'MAR', date: '10', day: 'SATDAY'},
   {month: 'MAR', date: '11', day: 'SUNDAY'},
   {month: 'MAR', date: '12', day: 'MONDAY'},
   {month: 'MAR', date: '13', day: 'TUEDAY'},
@@ -112,6 +112,7 @@ const TicketBookingScreen = ({navigation, route}) => {
             {date.map((item, index) => {
               return (
                 <TouchableOpacity
+                  key={index}
                   onPress={() => {
                     settouchable({
                       month: item.month,
@@ -149,6 +150,7 @@ const TicketBookingScreen = ({navigation, route}) => {
             {time.map((item, index) => {
               return (
                 <TouchableOpacity
+                  key={index}
                   onPress={() =>
                     settouch({
                       selectedTime: item,

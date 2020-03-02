@@ -268,7 +268,7 @@ const HomeScreen = ({navigation}) => {
         <View style={style.container1}>
           {Box.map((item, index) => {
             return (
-              <View style={{marginTop: hp(4)}}>
+              <View key={index} style={{marginTop: hp(4)}}>
                 <MovieList
                   buyTicket={() =>
                     //component bata yeta props pathako

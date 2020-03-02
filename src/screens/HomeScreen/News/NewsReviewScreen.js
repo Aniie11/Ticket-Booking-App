@@ -1,14 +1,17 @@
-import React from 'react';
-import {View, Text, Image, ScrollView} from 'react-native';
+import React, {useState} from 'react';
+import {View, Text, Image, ScrollView, TouchableOpacity} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import HeaderTop from '../../../components/Header/HeaderTop';
 import {allcolor, allImage} from '../../../constants';
+import Button1 from '../../../components/Button/Button1';
+import {useSafeArea} from 'react-native-safe-area-context';
 
 const NewsReviewScreen = ({navigation, route}) => {
   const data = route.params.data;
+
   return (
     <View style={{flex: 1}}>
       <HeaderTop
@@ -56,6 +59,7 @@ const NewsReviewScreen = ({navigation, route}) => {
             {data.cast.map((item, index) => {
               return (
                 <View
+                  key={index}
                   style={{
                     marginRight: wp(3),
                     marginTop: hp(5),

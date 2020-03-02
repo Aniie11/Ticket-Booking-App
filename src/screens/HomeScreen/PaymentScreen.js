@@ -27,6 +27,11 @@ const PaymentScreen = ({navigation, route}) => {
   const [touchable, settouchable] = useState();
   const [display, setdisplay] = useState();
   const [display1, setdisplay1] = useState();
+  const [firstname, setfirstname] = useState();
+  const [number, setnumber] = useState();
+  const [Email, setEmail] = useState();
+  const [lastname, setlastname] = useState();
+  const [username, setusername] = useState();
 
   return (
     <View style={{flex: 1}}>
@@ -43,18 +48,41 @@ const PaymentScreen = ({navigation, route}) => {
             <View
               style={{flexDirection: 'row', justifyContent: 'space-between'}}>
               <InputText
+                onChangeUpdateText={val => setfirstname(val)}
                 text="First Name"
                 text1="Enter First Name"
-                txtInputOverride={{width: wp(35)}}
+                txtInputOverride={{width: wp(38)}}
               />
-              <InputText text="Last Name" text1="Enter First Name" />
+              <InputText
+                onChangeUpdateText={val => setlastname(val)}
+                text="Last Name"
+                text1="Enter First Name"
+                txtInputOverride={{width: wp(38)}}
+              />
             </View>
-            <InputText text="Mobile" text1="Enter Mobile Number" />
-            <InputText text="Email" text1="abc@gmail.com" />
+            <InputText
+              onChangeUpdateText={val => setnumber(val)}
+              text="Mobile"
+              text1="Enter Mobile Number"
+            />
+            <InputText
+              onChangeUpdateText={val => setemaile(val)}
+              text="Email"
+              text1="abc@gmail.com"
+            />
 
             <View style={style.container2}>
               <TouchableOpacity onPress={() => setdisplay(!display)}>
-                <View style={style.container3}>
+                <View
+                  style={[
+                    style.container3,
+                    {
+                      backgroundColor: display
+                        ? allcolor.CircleColor
+                        : 'transparent',
+                      borderColor: allcolor.CircleColor,
+                    },
+                  ]}>
                   {display === true ? (
                     <View>
                       <Image
@@ -75,11 +103,22 @@ const PaymentScreen = ({navigation, route}) => {
               </Text>
             </View>
 
-            <View style={{flexDirection: 'row', marginTop: hp(2)}}>
-              {[...new Array(46)].map(() => {
+            <View
+              style={{
+                flexDirection: 'row',
+                marginTop: hp(2),
+                justifyContent: 'space-between',
+              }}>
+              {[...new Array(40)].map(() => {
                 return (
                   <View>
-                    <Text style={{color: allcolor.borderColour}}>-</Text>
+                    <Text
+                      style={{
+                        color: allcolor.borderColour,
+                        marginRight: wp(1),
+                      }}>
+                      -
+                    </Text>
                   </View>
                 );
               })}
@@ -136,11 +175,18 @@ const PaymentScreen = ({navigation, route}) => {
                   Rs.4050.00
                 </Text>
               </View>
-              <View style={{flexDirection: 'row'}}>
-                {[...new Array(48)].map(() => {
+              <View
+                style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                {[...new Array(40)].map(() => {
                   return (
                     <View>
-                      <Text style={{color: allcolor.borderColour}}>-</Text>
+                      <Text
+                        style={{
+                          color: allcolor.borderColour,
+                          marginRight: wp(1),
+                        }}>
+                        -
+                      </Text>
                     </View>
                   );
                 })}
@@ -148,11 +194,18 @@ const PaymentScreen = ({navigation, route}) => {
             </View>
             <View style={style.container10}>
               <TouchableOpacity onPress={() => setdisplay1(!display1)}>
-                <View style={style.container11}>
+                <View
+                  style={[
+                    style.container11,
+                    {
+                      borderColor: allcolor.CircleColor,
+                      backgroundColor: display1 ? '#00DE51' : 'transparent',
+                    },
+                  ]}>
                   {display1 === true ? (
                     <Image
                       resizeMode="center"
-                      style={{height: hp(5), width: wp(5)}}
+                      style={{height: hp(5), width: wp(5), tintColor: 'white'}}
                       source={allImage.tick}
                     />
                   ) : null}
@@ -255,9 +308,11 @@ const style = StyleSheet.create({
     height: wp(5),
     width: wp(5),
     borderRadius: wp(3),
-    backgroundColor: 'green',
+
     justifyContent: 'center',
     alignItems: 'center',
+
+    borderWidth: 1,
   },
   container4: {
     flexDirection: 'row',
@@ -312,7 +367,7 @@ const style = StyleSheet.create({
     height: wp(7),
     width: wp(7),
     borderRadius: wp(15),
-    borderColor: allcolor.CircleColor,
+
     borderWidth: 1,
     alignItems: 'center',
     justifyContent: 'center',

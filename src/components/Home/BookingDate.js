@@ -4,6 +4,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import {allcolor} from '../../constants';
 
 const BookingDate = ({month, date, day, index, onSelect}) => {
   return (
@@ -16,7 +17,7 @@ const BookingDate = ({month, date, day, index, onSelect}) => {
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: hp(2),
-        backgroundColor: index === onSelect ? '#ff661a' : null,
+        backgroundColor: index === onSelect ? allcolor.theme1 : null,
         borderColor: '#a6a6a6',
       }}>
       <Text

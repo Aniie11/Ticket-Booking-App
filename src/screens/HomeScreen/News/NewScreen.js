@@ -229,7 +229,9 @@ const NewScreen = ({navigation, route}) => {
           {Movies.map((item, index) => {
             return (
               <Card>
-                <View style={{height: hp(30), flexDirection: 'row'}}>
+                <View
+                  key={index}
+                  style={{height: hp(30), flexDirection: 'row'}}>
                   <Image
                     style={{
                       height: hp(30),
@@ -258,6 +260,7 @@ const NewScreen = ({navigation, route}) => {
                         justifyContent: 'flex-end',
                         flex: 1,
                         marginBottom: hp(2),
+                        alignItems: 'flex-end',
                       }}>
                       <TouchableOpacity
                         onPress={() =>

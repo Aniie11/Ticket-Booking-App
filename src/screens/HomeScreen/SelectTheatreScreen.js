@@ -130,6 +130,7 @@ const SelectTheatreScreen = ({navigation, route}) => {
             {selectTheatreDatas.map((item, index) => {
               return (
                 <TouchableOpacity
+                  key={index}
                   onPress={() =>
                     settouchable({
                       txt: item.txt,

@@ -58,7 +58,7 @@ const UpComingScreen = ({navigation}) => {
         <View style={style.container}>
           {Movie.map((item, index) => {
             return (
-              <View style={{marginTop: hp(3)}}>
+              <View key={index} style={{marginTop: hp(3)}}>
                 <TouchableOpacity
                   onPress={() =>
                     navigation.navigate('UpcomingDetailScreen', {

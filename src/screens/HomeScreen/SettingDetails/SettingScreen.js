@@ -13,12 +13,12 @@ const SettingScreen = () => {
   return (
     <View style={{flex: 1}}>
       <View style={{paddingHorizontal: wp(4)}}>
-        <HeaderTop text="EAP Movies" rightIcon={allImage.user} />
+        <HeaderTop text="Movies" rightIcon={allImage.user} />
       </View>
       <ScrollView contentContainerStyle={{paddingBottom: hp(10)}}>
         <View>
           <Card>
-            <View style={{paddingHorizontal: hp(4), paddingVertical: hp(2)}}>
+            <View style={{paddingHorizontal: wp(4), marginVertical: hp(2)}}>
               <Text style={style.style1}>Account</Text>
               <SettingText text="Change Password" />
               <SettingText text="Change Mobile Number" />
@@ -27,7 +27,7 @@ const SettingScreen = () => {
             </View>
           </Card>
           <Card>
-            <View style={{paddingHorizontal: hp(4), paddingVertical: hp(2)}}>
+            <View style={{marginVertical: hp(2), marginHorizontal: wp(4)}}>
               <Text style={style.style2}>Support</Text>
               <SettingText text="Careers" />
               <SettingText text="Help and Support" />

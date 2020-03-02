@@ -14,6 +14,7 @@ const user = [{name: 'Hello', pw: 'world'}];
 
 const SignInScreen = ({navigation}) => {
   const [name, setname] = useState();
+
   const [pw, setpw] = useState();
   const [visible, setvisible] = useState(true);
   const LOGIN = () => {
@@ -24,9 +25,6 @@ const SignInScreen = ({navigation}) => {
     } else if (pw !== 'world') {
       alert('Incorrect password');
     } else if (name === '' && pw === '');
-    {
-      alert('Please fill username & password');
-    }
   };
   return (
     <View style={{flex: 1}}>
@@ -65,7 +63,7 @@ const SignInScreen = ({navigation}) => {
           </View>
 
           <InputText
-            onChangeUpdateText={val => setpw(val)}
+            onChangeUpdateText={val => setpw(val)} //
             textValue={pw}
             text="Password"
             text1="Enter Password"
@@ -74,7 +72,7 @@ const SignInScreen = ({navigation}) => {
 
           <View style={{alignItems: 'flex-end', marginTop: hp(3)}}>
             <TouchableOpacity onPress={() => alert('Remember your password')}>
-              <Text>Forgot Password?</Text>
+              <Text style={{color: allcolor.textColor}}>Forgot Password?</Text>
             </TouchableOpacity>
           </View>
           <TouchableOpacity onPress={LOGIN}>

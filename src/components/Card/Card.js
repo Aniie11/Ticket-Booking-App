@@ -11,7 +11,7 @@ const Card = ({children, styleOverride}) => {
       style={{
         elevation: 5,
         backgroundColor: 'white',
-        marginHorizontal: wp(5),
+        marginHorizontal: wp(4),
         borderRadius: wp(4),
         marginTop: hp(3),
         ...styleOverride,

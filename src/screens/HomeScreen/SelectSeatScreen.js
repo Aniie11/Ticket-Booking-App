@@ -94,6 +94,8 @@ const SelectSeatScreen = ({navigation, route}) => {
 
   const [selectedSeat, setSelectedSeat] = useState([]);
 
+  const [preselectIndex, setPreselectIndex] = useState([14, 20]);
+
   return (
     <View style={{flex: 1}}>
       <HeaderTop
@@ -158,6 +160,7 @@ const SelectSeatScreen = ({navigation, route}) => {
             {data1.map((item, index) => {
               return (
                 <View
+                  key={index}
                   style={{
                     marginBottom: hp(1),
                     width: wp(7),
@@ -187,6 +190,7 @@ const SelectSeatScreen = ({navigation, route}) => {
               ) {
                 return (
                   <TouchableOpacity
+                    key={index}
                     onPress={() => {
                       console.log(index, 'Index external');
                       if (selectedSeat.includes(index)) {
@@ -194,7 +198,7 @@ const SelectSeatScreen = ({navigation, route}) => {
                         arr = [...selectedSeat];
                         console.log(index, 'Index internal');
                         // console.log(arr, 'Seat');
-                        arr.splice(-index, 1);
+                        arr.splice(index, 1);
                         console.log(arr, 'Seat spliced');
                         setSelectedSeat(arr);
                       } else {
@@ -213,8 +217,11 @@ const SelectSeatScreen = ({navigation, route}) => {
                       marginRight: spaceArr.includes(index) ? wp(4) : wp(1),
                       marginBottom: hp(1),
                       backgroundColor: selectedSeat.includes(index)
-                        ? 'red'
-                        : null,
+                        ? allcolor.theme1
+                        : preselectIndex.includes(index)
+                        ? 'blue'
+                        : 'transparent',
+                      borderColor: allcolor.borderColour,
                     }}>
                     <Text
                       style={{
@@ -241,6 +248,7 @@ const SelectSeatScreen = ({navigation, route}) => {
             {data1.map((item, index) => {
               return (
                 <View
+                  key={index}
                   style={{
                     marginBottom: hp(1),
                     width: wp(7),
@@ -259,7 +267,7 @@ const SelectSeatScreen = ({navigation, route}) => {
       </View>
 
       {/* .......................................................*/}
-      <View style={{alignItems: 'center'}}>
+      <View style={{alignItems: 'center', marginTop: hp(5)}}>
         <View
           style={{
             height: hp(8),

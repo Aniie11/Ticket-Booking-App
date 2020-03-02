@@ -17,7 +17,13 @@ import {
   MenuTrigger,
 } from 'react-native-popup-menu';
 const SignUpScreen = ({navigation}) => {
-  const [numberType, setnumberType] = useState('');
+  const [numberType, setnumberType] = useState('+977');
+  const [firstname, setfirstname] = useState();
+  const [Email, setEmail] = useState();
+  const [lastname, setlastname] = useState();
+  const [username, setusername] = useState();
+
+  const [pw, setpw] = useState();
   return (
     // <MenuProvider>
     <View style={{flex: 1}}>
@@ -27,14 +33,17 @@ const SignUpScreen = ({navigation}) => {
         <View style={{padding: wp(5)}}>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
             <InputText
+              onChangeUpdateText={val => setfirstname(val)}
               text="First name"
               text1="Enter FirstName"
-              txtInputOverride={{width: wp(35)}}
+              txtInputOverride={{width: wp(38)}}
             />
             <InputText
+              onChangeUpdateText={val => setusername(val)}
+              onChangeUpdateText={val => setlastname(val)}
               text="Last name"
               text1="Enter LastName"
-              txtInputOverride={{width: wp(35)}}
+              txtInputOverride={{width: wp(38)}}
             />
           </View>
           <InputText text="Username" text1="Enter Username" />
@@ -69,8 +78,16 @@ const SignUpScreen = ({navigation}) => {
             </Menu>
             <InputText text="Mobile number" />
           </View>
-          <InputText text="Email" text1="Enter email address" />
-          <InputText text="Password" text1="Enter password" />
+          <InputText
+            onChangeUpdateText={val => setEmail(val)}
+            text="Email"
+            text1="Enter email address"
+          />
+          <InputText
+            onChangeUpdateText={val => setpw(val)}
+            text="Password"
+            text1="Enter password"
+          />
           <TouchableOpacity>
             <Button text="Sign Up" />
           </TouchableOpacity>
@@ -84,7 +101,9 @@ const SignUpScreen = ({navigation}) => {
           justifyContent: 'center',
           marginBottom: hp(8),
         }}>
-        <Text>Already have an account?</Text>
+        <Text style={{color: allcolor.textColor}}>
+          Already have an account?
+        </Text>
         <TouchableOpacity onPress={() => navigation.navigate('SignInScreen')}>
           <Text style={{color: allcolor.theme1, marginLeft: wp(3)}}>
             Signin

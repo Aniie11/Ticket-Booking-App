@@ -16,7 +16,7 @@ const InputText = ({
 }) => {
   return (
     <View style={{marginTop: hp(1)}}>
-      <Text>{text}</Text>
+      <Text style={{color: allcolor.textColor}}>{text}</Text>
       <View style={{marginTop: hp(1)}}>
         <TextInput
           secureTextEntry={Visibility}
@@ -29,6 +29,8 @@ const InputText = ({
             borderColor: allcolor.borderColour,
             borderRadius: wp(2),
             marginLeft: wp(0),
+            paddingHorizontal: wp(3),
+            color: allcolor.textColor,
 
             ...txtInputOverride,
           }}

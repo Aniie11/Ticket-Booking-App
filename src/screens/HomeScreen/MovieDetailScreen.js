@@ -80,6 +80,7 @@ const MovieDetailScreen = ({navigation, route}) => {
           {data.cast.slice(0, 3).map((item, index) => {
             return (
               <View
+                key={index}
                 style={{
                   marginRight: wp(3),
                   marginTop: hp(2),

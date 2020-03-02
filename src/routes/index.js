@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -12,7 +12,7 @@ import HomeScreen from '../screens/HomeScreen/HomeScreen';
 import SettingScreen from '../screens/HomeScreen/SettingDetails/SettingScreen';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import IconImg from '../components/Home/IconImg';
-import {allImage, allcolor} from '../constants';
+import {allImage} from '../constants';
 import MovieDetailScreen from '../screens/HomeScreen/MovieDetailScreen';
 import TicketBookingScreen from '../screens/HomeScreen/TicketBookingScreen';
 import SelectTheatreScreen from '../screens/HomeScreen/SelectTheatreScreen';

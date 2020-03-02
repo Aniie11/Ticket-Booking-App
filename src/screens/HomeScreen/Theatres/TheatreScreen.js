@@ -8,6 +8,7 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import TheatreScreenComponent from '../../../components/Theatres/TheatreScreenComponent';
+import Card from '../../../components/Card/Card';
 
 const movieHall = [
   {
@@ -48,22 +49,20 @@ const TheatreScreen = () => {
     <View style={{flex: 1}}>
       <HeaderTop text="EAP Movies" rightIcon={allImage.user} />
 
-      <View style={{paddingHorizontal: wp(4)}}>
-        <FlatList
-          contentContainerStyle={{paddingBottom: hp(15)}} //ali scrolll garauxa (scroll navako bela)
-          showsVerticalScrollIndicator={false}
-          data={movieHall}
-          renderItem={({item}) => (
-            <TheatreScreenComponent
-              img={item.img}
-              txt1={item.txt1}
-              txt2={item.txt2}
-              txt3={item.txt3}
-              txt={item.txt}
-            />
-          )}
-        />
-      </View>
+      <FlatList
+        contentContainerStyle={{paddingBottom: hp(15)}} //ali scrolll garauxa (scroll navako bela)
+        showsVerticalScrollIndicator={false}
+        data={movieHall}
+        renderItem={({item}) => (
+          <TheatreScreenComponent
+            img={item.img}
+            txt1={item.txt1}
+            txt2={item.txt2}
+            txt3={item.txt3}
+            txt={item.txt}
+          />
+        )}
+      />
     </View>
   );
 };
