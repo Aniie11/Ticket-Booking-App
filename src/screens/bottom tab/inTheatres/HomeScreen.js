@@ -1,13 +1,13 @@
-import React, {useState} from 'react';
-import {View, Text, Image, ScrollView, StyleSheet} from 'react-native';
+import React from 'react';
+import {View, ScrollView, StyleSheet} from 'react-native';
 
-import HeaderTop from '../../components/Header/HeaderTop';
-import {allImage, allcolor} from '../../constants/';
+import HeaderTop from '../../../components/Header/HeaderTop';
+import {allImage} from '../../../constants';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import MovieList from '../../components/Home/MovieList';
+import MovieList from '../../../components/Home/MovieList';
 
 const Box = [
   {

@@ -5,25 +5,29 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import {createStackNavigator} from '@react-navigation/stack';
-import WelcomeScreen from '../../src/screens/WelcomeScreen/WelcomeScreen';
-import SignInScreen from '../screens/LoginScreen/SignInScreen';
-import SignUpScreen from '../screens/LoginScreen/SignUpScreen';
-import HomeScreen from '../screens/HomeScreen/HomeScreen';
-import SettingScreen from '../screens/HomeScreen/SettingDetails/SettingScreen';
+import WelcomeScreen from '../screens/intro/WelcomeScreen';
+import SignInScreen from '../screens/login/SignInScreen';
+import SignUpScreen from '../screens/register/SignUpScreen';
+
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import IconImg from '../components/Home/IconImg';
-import {allImage} from '../constants';
-import MovieDetailScreen from '../screens/HomeScreen/MovieDetailScreen';
-import TicketBookingScreen from '../screens/HomeScreen/TicketBookingScreen';
-import SelectTheatreScreen from '../screens/HomeScreen/SelectTheatreScreen';
-import SelectTicketScreen from '../screens/HomeScreen/SelectTicketScreen';
-import UpComingScreen from '../screens/HomeScreen/UpComing/UpComingScreen';
-import TheatreScreen from '../screens/HomeScreen/Theatres/TheatreScreen';
-import SelectSeatScreen from '../screens/HomeScreen/SelectSeatScreen';
-import PaymentScreen from '../screens/HomeScreen/PaymentScreen';
-import NewScreen from '../screens/HomeScreen/News/NewScreen';
-import NewsReviewScreen from '../screens/HomeScreen/News/NewsReviewScreen';
-import UpcomingDetailScreen from '../screens/HomeScreen/UpComing/UpcomingDetailScreen';
+import {allImage} from '../constants/Image';
+import {
+  HomeScreen,
+  MovieDetailScreen,
+  PaymentScreen,
+  SelectSeatScreen,
+  SelectTheatreScreen,
+  SelectTicketScreen,
+  TicketBookingScreen,
+  TheatreScreen,
+  UpComingScreen,
+  UpcomingDetailScreen,
+  NewScreen,
+  NewsReviewScreen,
+  SettingScreen,
+} from '../screens/bottom tab';
+
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 

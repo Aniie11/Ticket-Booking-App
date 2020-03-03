@@ -6,7 +6,7 @@ import {
 } from 'react-native-responsive-screen';
 import InputText from '../../components/InputText/InputText';
 import Button from '../../components/Button/Button';
-import {allcolor, allImage} from '../../constants/';
+import {allcolor} from '../../constants';
 import Card from '../../components/Card/Card';
 import HeaderTop from '../../components/Header/HeaderTop';
 

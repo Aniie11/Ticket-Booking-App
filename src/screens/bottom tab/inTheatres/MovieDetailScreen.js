@@ -8,14 +8,14 @@ import {
   ScrollView,
   StyleSheet,
 } from 'react-native';
-import HeaderTop from '../../components/Header/HeaderTop';
-import {allImage} from '../../constants';
+import HeaderTop from '../../../components/Header/HeaderTop';
+import {allImage} from '../../../constants';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import Button from '../../components/Button/Button';
-import Card from '../../components/Card/Card';
+import Button from '../../../components/Button/Button';
+import Card from '../../../components/Card/Card';
 
 const MovieDetailScreen = ({navigation, route}) => {
   // console.log(obj.route.params.data);

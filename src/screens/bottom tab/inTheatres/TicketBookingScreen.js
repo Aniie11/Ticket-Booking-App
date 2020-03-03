@@ -5,10 +5,10 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-import HeaderTop from '../../components/Header/HeaderTop';
-import {allImage, allcolor} from '../../constants';
-import BookingDate from '../../components/Home/BookingDate';
-import Button1 from '../../components/Button/Button1';
+import HeaderTop from '../../../components/Header/HeaderTop';
+import {allImage, allcolor} from '../../../constants';
+import BookingDate from '../../../components/Home/BookingDate';
+import Button1 from '../../../components/Button/Button1';
 
 const date = [
   {month: 'MAR', date: '09', day: 'FRIDAY'},

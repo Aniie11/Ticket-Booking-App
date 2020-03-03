@@ -11,10 +11,10 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import HeaderTop from '../../components/Header/HeaderTop';
-import {allImage, allcolor} from '../../constants';
-import TicketSelect from '../../components/Theatres/SelectTicket/TicketSelect';
-import Button1 from '../../components/Button/Button1';
+import HeaderTop from '../../../components/Header/HeaderTop';
+import {allImage, allcolor} from '../../../constants';
+import TicketSelect from '../../../components/Theatres/SelectTicket/TicketSelect';
+import Button1 from '../../../components/Button/Button1';
 
 const selectSeat = [
   {

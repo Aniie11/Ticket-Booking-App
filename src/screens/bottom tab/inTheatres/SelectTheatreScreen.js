@@ -4,9 +4,9 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import Button1 from '../../components/Button/Button1';
-import HeaderTop from '../../components/Header/HeaderTop';
-import {allImage, allcolor} from '../../constants';
+import Button1 from '../../../components/Button/Button1';
+import HeaderTop from '../../../components/Header/HeaderTop';
+import {allImage, allcolor} from '../../../constants';
 
 const selectTheatreDatas = [
   {

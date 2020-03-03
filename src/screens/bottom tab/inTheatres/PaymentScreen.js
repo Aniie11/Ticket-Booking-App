@@ -12,10 +12,10 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import HeaderTop from '../../components/Header/HeaderTop';
-import {allImage, allcolor} from '../../constants';
-import Card from '../../components/Card/Card';
-import InputText from '../../components/InputText/InputText';
+import HeaderTop from '../../../components/Header/HeaderTop';
+import {allImage, allcolor} from '../../../constants';
+import Card from '../../../components/Card/Card';
+import InputText from '../../../components/InputText/InputText';
 
 const PaymentScreen = ({navigation, route}) => {
   const data = route.params.data;

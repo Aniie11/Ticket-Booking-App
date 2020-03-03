@@ -4,9 +4,9 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import HeaderTop from '../../components/Header/HeaderTop';
-import Button1 from '../../components/Button/Button1';
-import {allcolor, allImage} from '../../constants';
+import HeaderTop from '../../../components/Header/HeaderTop';
+import Button1 from '../../../components/Button/Button1';
+import {allcolor, allImage} from '../../../constants';
 
 const ticketArr = [
   'G1',

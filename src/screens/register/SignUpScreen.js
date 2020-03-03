@@ -10,7 +10,6 @@ import {allcolor} from '../../constants';
 import HeaderTop from '../../components/Header/HeaderTop';
 import Card from '../../components/Card/Card';
 import {
-  MenuProvider,
   Menu,
   MenuOptions,
   MenuOption,
