@@ -1,10 +1,10 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, Image, StyleSheet} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {allImage, allcolor} from '../../constants';
+import {allImage, allcolor, globalStyle} from '../../constants';
 import Card from '../../components/Card/Card';
 
 const selectingImage = [
@@ -22,6 +22,18 @@ const selectingImage = [
   },
 ];
 
+const imageIcons = [
+  {
+    img: allImage.pin,
+  },
+  {
+    img: allImage.phone,
+  },
+  {
+    img: allImage.mail,
+  },
+];
+
 const TheatreScreenComponent = ({img, txt, txt1, txt2, txt3}) => {
   return (
     <View style={{flex: 1, marginHorizontal: wp(5)}}>
@@ -30,15 +42,7 @@ const TheatreScreenComponent = ({img, txt, txt1, txt2, txt3}) => {
           style={{
             flexDirection: 'row',
           }}>
-          <Image
-            style={{
-              height: hp(25),
-              width: wp(40),
-              borderTopLeftRadius: wp(4),
-              borderBottomLeftRadius: wp(4),
-            }}
-            source={img}
-          />
+          <Image style={style.styleImage} source={img} />
           <View
             style={{
               marginTop: hp(2),
@@ -48,44 +52,28 @@ const TheatreScreenComponent = ({img, txt, txt1, txt2, txt3}) => {
             <View
               style={{
                 flexDirection: 'row',
-                alignItems: 'center',
               }}>
-              <Image
-                resizeMode="contain"
-                style={{height: hp(4), width: wp(4)}}
-                source={allImage.pin}
-              />
-              <Text style={{fontSize: wp(2), marginLeft: wp(4)}}>{txt1}</Text>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-              }}>
-              <Image
-                resizeMode="contain"
-                style={{height: hp(4), width: wp(4)}}
-                source={allImage.phone}
-              />
-              <Text style={{fontSize: wp(2), marginLeft: wp(4)}}>{txt2}</Text>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-              }}>
-              <Image
-                resizeMode="contain"
-                style={{height: hp(4), width: wp(4)}}
-                source={allImage.mail}
-              />
-              <Text style={{fontSize: wp(2), marginLeft: wp(4)}}>{txt3}</Text>
+              <View>
+                {imageIcons.map((item, index) => (
+                  <View key={index}>
+                    <Image
+                      resizeMode="contain"
+                      style={{height: hp(4), width: wp(4)}}
+                      source={item.img}
+                    />
+                  </View>
+                ))}
+              </View>
+              <View style={{justifyContent: 'space-around'}}>
+                <Text style={{fontSize: wp(2), marginLeft: wp(4)}}>{txt1}</Text>
+                <Text style={{fontSize: wp(2), marginLeft: wp(4)}}>{txt2}</Text>
+                <Text style={{fontSize: wp(2), marginLeft: wp(4)}}>{txt3}</Text>
+              </View>
             </View>
 
             <View
               style={{
                 flexDirection: 'row',
-
                 alignItems: 'flex-end',
                 justifyContent: 'flex-end',
               }}>
@@ -99,17 +87,10 @@ const TheatreScreenComponent = ({img, txt, txt1, txt2, txt3}) => {
                     />
                     {item.tick ? (
                       <View
-                        style={{
-                          position: 'absolute',
-                          height: wp(3),
-                          width: wp(3),
-                          backgroundColor: allcolor.CircleColor,
-                          borderRadius: wp(5),
-                          justifyContent: 'center',
-                          alignItems: 'center',
-                          marginTop: hp(4),
-                          marginLeft: wp(-2),
-                        }}>
+                        style={[
+                          style.container,
+                          {backgroundColor: allcolor.CircleColor},
+                        ]}>
                         <Image
                           resizeMode="center"
                           style={{
@@ -133,3 +114,21 @@ const TheatreScreenComponent = ({img, txt, txt1, txt2, txt3}) => {
 };
 
 export default TheatreScreenComponent;
+const style = StyleSheet.create({
+  container: {
+    position: 'absolute',
+    height: wp(3),
+    width: wp(3),
+    borderRadius: wp(5),
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: hp(4),
+    marginLeft: wp(-2),
+  },
+  styleImage: {
+    height: hp(25),
+    width: wp(40),
+    borderTopLeftRadius: wp(4),
+    borderBottomLeftRadius: wp(4),
+  },
+});

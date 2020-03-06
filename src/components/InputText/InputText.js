@@ -26,7 +26,7 @@ const InputText = ({
             borderWidth: 1,
             // width: wp(85),
             height: hp(6),
-            borderColor: allcolor.borderColour,
+            borderColor: allcolor.bordercolor,
             borderRadius: wp(2),
             marginLeft: wp(0),
             paddingHorizontal: wp(3),

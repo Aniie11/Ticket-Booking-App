@@ -6,7 +6,7 @@ import {
 } from 'react-native-responsive-screen';
 import HeaderTop from '../../../components/Header/HeaderTop';
 import {allcolor, allImage} from '../../../constants';
-import Button1 from '../../../components/Button/Button1';
+import NextButton from '../../../components/Button/NextButton';
 
 const NewsReviewScreen = ({navigation, route}) => {
   const data = route.params.data;

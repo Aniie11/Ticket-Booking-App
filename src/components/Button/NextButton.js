@@ -6,7 +6,7 @@ import {
 } from 'react-native-responsive-screen';
 import {allcolor, allImage} from '../../constants';
 
-const Button1 = ({txt}) => {
+const NextButton = ({txt}) => {
   return (
     <View style={[style.container, {borderColor: allcolor.theme}]}>
       <Text
@@ -27,7 +27,7 @@ const Button1 = ({txt}) => {
   );
 };
 
-export default Button1;
+export default NextButton;
 const style = StyleSheet.create({
   container: {
     height: hp(5),

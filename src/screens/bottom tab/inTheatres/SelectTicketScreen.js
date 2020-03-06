@@ -12,9 +12,9 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import HeaderTop from '../../../components/Header/HeaderTop';
-import {allImage, allcolor} from '../../../constants';
+import {allImage, allcolor, globalStyle} from '../../../constants';
 import TicketSelect from '../../../components/Theatres/SelectTicket/TicketSelect';
-import Button1 from '../../../components/Button/Button1';
+import NextButton from '../../../components/Button/NextButton';
 
 const selectSeat = [
   {
@@ -70,22 +70,33 @@ const SelectTicketScreen = ({navigation, route}) => {
                   marginTop: hp(1),
                 }}>
                 <View style={style.container}>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                    }}>
-                    <Text style={{fontSize: wp(3)}}>{date.day}</Text>
-                    <Text style={{fontSize: wp(3), marginLeft: wp(1)}}>
+                  <View style={{...globalStyle.itemInCenter}}>
+                    <Text style={{fontSize: wp(2), fontWeight: 'bold'}}>
+                      {date.day}
+                    </Text>
+                    <Text
+                      style={{
+                        fontSize: wp(2),
+                        fontWeight: 'bold',
+                        marginLeft: wp(1),
+                      }}>
                       {date.month}
                     </Text>
-                    <Text style={{fontSize: wp(3), marginLeft: wp(1)}}>
+                    <Text
+                      style={{
+                        fontSize: wp(2),
+                        fontWeight: 'bold',
+                        marginLeft: wp(1),
+                      }}>
                       {date.date}
                     </Text>
                   </View>
                 </View>
 
                 <View style={style.container1}>
-                  <Text>{time}</Text>
+                  <Text style={{fontWeight: 'bold', fontSize: wp(3)}}>
+                    {time}
+                  </Text>
                 </View>
               </View>
               <View style={{flexDirection: 'row', marginTop: hp(1)}}>
@@ -93,7 +104,9 @@ const SelectTicketScreen = ({navigation, route}) => {
                   <Text>{theatre.txt}</Text>
                 </View>
                 <View style={style.container3}>
-                  <Text>{total} Tickets</Text>
+                  <Text style={{fontSize: wp(3), fontWeight: 'bold'}}>
+                    {total} Tickets
+                  </Text>
                 </View>
               </View>
             </View>
@@ -157,7 +170,7 @@ const SelectTicketScreen = ({navigation, route}) => {
                         {
                           backgroundColor:
                             index === touch ? allcolor.theme : null,
-                          borderColor: allcolor.borderColour,
+                          borderColor: allcolor.bordercolor,
                         },
                       ]}>
                       <Text
@@ -197,7 +210,7 @@ const SelectTicketScreen = ({navigation, route}) => {
                 total: total,
               })
             }>
-            <Button1 txt="Next" />
+            <NextButton txt="Next" />
           </TouchableOpacity>
         </View>
       </ScrollView>

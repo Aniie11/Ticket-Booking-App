@@ -5,12 +5,12 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-const IconImg = ({img, colour}) => {
+const IconImg = ({img, color}) => {
   return (
     <View>
       <Image
         resizeMode="contain"
-        style={{height: hp(7), width: wp(7), tintColor: colour}}
+        style={{height: hp(7), width: wp(7), tintColor: color}}
         source={img}
       />
     </View>

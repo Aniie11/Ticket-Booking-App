@@ -8,22 +8,22 @@ import {
 import HeaderTop from '../../../components/Header/HeaderTop';
 import {allImage, allcolor} from '../../../constants';
 
-import Button1 from '../../../components/Button/Button1';
+import NextButton from '../../../components/Button/NextButton';
 
 const date = [
   {month: 'MAR', date: '09', day: 'FRIDAY'},
   {month: 'MAR', date: '09', day: 'FRIDAY'},
-  {month: 'MAR', date: '10', day: 'SATDAY'},
+  {month: 'MAR', date: '10', day: 'SATURDAY'},
   {month: 'MAR', date: '11', day: 'SUNDAY'},
   {month: 'MAR', date: '12', day: 'MONDAY'},
-  {month: 'MAR', date: '13', day: 'TUEDAY'},
-  {month: 'MAR', date: '14', day: 'WEDDAY'},
+  {month: 'MAR', date: '13', day: 'TUESDAY'},
+  {month: 'MAR', date: '14', day: 'WEDNESDAY'},
   {month: 'MAR', date: '15', day: 'THURSDAY'},
   {month: 'MAR', date: '16', day: 'FRIDAY'},
-  {month: 'MAR', date: '17', day: 'SATDAY'},
+  {month: 'MAR', date: '17', day: 'SATURDAY'},
   {month: 'MAR', date: '18', day: 'SUNDAY'},
   {month: 'MAR', date: '19', day: 'MONDAY'},
-  {month: 'MAR', date: '20', day: 'TUEDAY'},
+  {month: 'MAR', date: '20', day: 'TUESDAY'},
 ];
 
 const time = ['10:30 AM', '1:30 AM', '4:15 PM', '7:00 PM', '10:00 PM'];
@@ -127,6 +127,7 @@ const TicketBookingScreen = ({navigation, route}) => {
                   <Text
                     style={{
                       fontSize: wp(2),
+
                       color: index === touchable.index ? 'white' : 'black',
                     }}>
                     {item.day}
@@ -188,7 +189,7 @@ const TicketBookingScreen = ({navigation, route}) => {
               alert('Please fill date');
             }
           }}>
-          <Button1 txt="Next" />
+          <NextButton txt="Next" />
         </TouchableOpacity>
       </View>
     </View>

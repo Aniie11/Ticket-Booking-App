@@ -4,7 +4,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import Button1 from '../../../components/Button/Button1';
+import NextButton from '../../../components/Button/NextButton';
 import HeaderTop from '../../../components/Header/HeaderTop';
 import {allImage, allcolor} from '../../../constants';
 
@@ -81,12 +81,25 @@ const SelectTheatreScreen = ({navigation, route}) => {
                 <View
                   style={{
                     flexDirection: 'row',
+                    alignItems: 'center',
                   }}>
-                  <Text style={{fontSize: wp(3)}}>{date.day}</Text>
-                  <Text style={{fontSize: wp(3), marginLeft: wp(1)}}>
+                  <Text style={{fontSize: wp(2), fontWeight: 'bold'}}>
+                    {date.day}
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: wp(2),
+                      marginLeft: wp(1),
+                      fontWeight: 'bold',
+                    }}>
                     {date.month}
                   </Text>
-                  <Text style={{fontSize: wp(3), marginLeft: wp(1)}}>
+                  <Text
+                    style={{
+                      fontSize: wp(2),
+                      marginLeft: wp(1),
+                      fontWeight: 'bold',
+                    }}>
                     {date.date}
                   </Text>
                 </View>
@@ -102,7 +115,9 @@ const SelectTheatreScreen = ({navigation, route}) => {
                   justifyContent: 'center',
                   alignItems: 'center',
                 }}>
-                <Text>{time}</Text>
+                <Text style={{fontSize: wp(2), fontWeight: 'bold'}}>
+                  {time}
+                </Text>
               </View>
             </View>
             <View
@@ -145,7 +160,7 @@ const SelectTheatreScreen = ({navigation, route}) => {
                       borderWidth: 1,
                       justifyContent: 'center',
                       alignItems: 'center',
-                      borderColor: allcolor.borderColour,
+                      borderColor: allcolor.bordercolor,
                       borderRadius: wp(2),
                       marginTop: hp(2),
                       backgroundColor:
@@ -191,7 +206,7 @@ const SelectTheatreScreen = ({navigation, route}) => {
               theatre: touchable,
             })
           }>
-          <Button1 txt="Next" />
+          <NextButton txt="Next" />
         </TouchableOpacity>
       </View>
     </View>

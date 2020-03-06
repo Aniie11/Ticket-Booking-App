@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import {
   widthPercentageToDP as wp,
@@ -25,7 +25,7 @@ const datas = [
 ];
 const TicketSelect = ({txt, selectedTicket, selectTicket}) => {
   return (
-    <View style={style.container}>
+    <View style={[style.container, {borderColor: allcolor.bordercolor}]}>
       <Text style={{fontWeight: 'bold', textAlign: 'center', fontSize: wp(4)}}>
         {txt}
       </Text>
@@ -41,7 +41,7 @@ const TicketSelect = ({txt, selectedTicket, selectTicket}) => {
                   {
                     backgroundColor:
                       index === selectedTicket.index ? allcolor.theme : null,
-                    borderColor: allcolor.borderColour,
+                    borderColor: allcolor.bordercolor,
                   },
                 ]}>
                 <Text
@@ -65,11 +65,10 @@ export default TicketSelect;
 const style = StyleSheet.create({
   container: {
     borderWidth: 1,
-    height: hp(30),
+
     width: wp(43),
     borderRadius: wp(2),
     padding: wp(1),
-    borderColor: allcolor.borderColour,
   },
   container1: {
     flex: 1,

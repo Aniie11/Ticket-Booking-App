@@ -54,7 +54,7 @@ const SignUpScreen = ({navigation}) => {
                     style={{
                       height: hp(3),
                       width: wp(3),
-                      tintColor: allcolor.borderColour,
+                      tintColor: allcolor.bordercolor,
                       marginRight: wp(1),
                     }}
                     source={require('../../resource/downarrow.png')}
@@ -113,7 +113,7 @@ const style = StyleSheet.create({
   container: {
     height: hp(6),
     width: wp(20),
-    borderColor: allcolor.borderColour,
+    borderColor: allcolor.bordercolor,
     borderWidth: 1,
     borderRadius: wp(2),
     marginTop: hp(5),

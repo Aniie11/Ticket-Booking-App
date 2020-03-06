@@ -13,7 +13,7 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import HeaderTop from '../../../components/Header/HeaderTop';
-import {allImage, allcolor} from '../../../constants';
+import {allImage, allcolor, globalStyle} from '../../../constants';
 import Card from '../../../components/Card/Card';
 import InputText from '../../../components/InputText/InputText';
 
@@ -114,7 +114,7 @@ const PaymentScreen = ({navigation, route}) => {
                   <View>
                     <Text
                       style={{
-                        color: allcolor.borderColour,
+                        color: allcolor.bordercolor,
                         marginRight: wp(1),
                       }}>
                       -
@@ -143,28 +143,46 @@ const PaymentScreen = ({navigation, route}) => {
                     <View style={style.container5}>
                       <View
                         style={{
-                          flexDirection: 'row',
+                          ...globalStyle.itemInCenter,
                         }}>
-                        <Text style={{fontSize: wp(3)}}>{date.day}</Text>
-                        <Text style={{fontSize: wp(3), marginLeft: wp(1)}}>
+                        <Text style={{fontSize: wp(2), fontWeight: 'bold'}}>
+                          {date.day}
+                        </Text>
+                        <Text
+                          style={{
+                            fontSize: wp(2),
+                            fontWeight: 'bold',
+                            marginLeft: wp(1),
+                          }}>
                           {date.month}
                         </Text>
-                        <Text style={{fontSize: wp(3), marginLeft: wp(1)}}>
+                        <Text
+                          style={{
+                            fontSize: wp(2),
+                            fontWeight: 'bold',
+                            marginLeft: wp(1),
+                          }}>
                           {date.date}
                         </Text>
                       </View>
                     </View>
 
                     <View style={style.container6}>
-                      <Text>{time}</Text>
+                      <Text style={{fontWeight: 'bold', fontSize: wp(2)}}>
+                        {time}
+                      </Text>
                     </View>
                   </View>
                   <View style={{flexDirection: 'row', marginTop: hp(1)}}>
                     <View style={style.container7}>
-                      <Text>{theatre.txt}</Text>
+                      <Text style={{fontWeight: 'bold', fontSize: wp(2)}}>
+                        {theatre.txt}
+                      </Text>
                     </View>
                     <View style={style.container8}>
-                      <Text style={{fontSize: wp(3)}}>{total} Tickets</Text>
+                      <Text style={{fontSize: wp(2), fontWeight: 'bold'}}>
+                        {total} Tickets
+                      </Text>
                     </View>
                   </View>
                 </View>
@@ -182,7 +200,7 @@ const PaymentScreen = ({navigation, route}) => {
                     <View>
                       <Text
                         style={{
-                          color: allcolor.borderColour,
+                          color: allcolor.bordercolor,
                           marginRight: wp(1),
                         }}>
                         -
@@ -254,7 +272,7 @@ const PaymentScreen = ({navigation, route}) => {
                 style.container13,
                 {
                   backgroundColor: touch ? allcolor.theme : null,
-                  borderColor: allcolor.borderColour,
+                  borderColor: allcolor.bordercolor,
                 },
               ]}>
               <Text style={{color: touch ? 'white' : null}}>Back</Text>
@@ -266,7 +284,7 @@ const PaymentScreen = ({navigation, route}) => {
                 style.container14,
                 {
                   backgroundColor: touchable ? allcolor.theme : null,
-                  borderColor: allcolor.borderColour,
+                  borderColor: allcolor.bordercolor,
                 },
               ]}>
               <Text style={{color: touchable ? 'white' : null}}>Pay Now</Text>

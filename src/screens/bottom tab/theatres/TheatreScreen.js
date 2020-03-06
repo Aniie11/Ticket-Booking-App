@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, FlatList} from 'react-native';
+import {View, FlatList} from 'react-native';
 import HeaderTop from '../../../components/Header/HeaderTop';
 import {allImage} from '../../../constants';
 
@@ -20,6 +20,7 @@ const movieHall = [
   },
   {
     img: allImage.hall1,
+
     txt: 'Savoy3D-Wellawatte',
     txt1: 'No.12,Savoy Building,Colombo 6',
     txt2: '+94 11 744 6223',
@@ -43,6 +44,7 @@ const movieHall = [
     id: '4',
   },
 ];
+
 const TheatreScreen = () => {
   return (
     <View style={{flex: 1}}>

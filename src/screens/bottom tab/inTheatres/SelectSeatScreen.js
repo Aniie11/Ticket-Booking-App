@@ -5,8 +5,8 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import HeaderTop from '../../../components/Header/HeaderTop';
-import Button1 from '../../../components/Button/Button1';
-import {allcolor, allImage} from '../../../constants';
+import NextButton from '../../../components/Button/NextButton';
+import {allcolor, allImage, globalStyle} from '../../../constants';
 
 const ticketArr = [
   'G1',
@@ -119,20 +119,34 @@ const SelectSeatScreen = ({navigation, route}) => {
               <View style={style.container}>
                 <View
                   style={{
-                    flexDirection: 'row',
+                    ...globalStyle.itemInCenter,
                   }}>
-                  <Text style={{fontSize: wp(3)}}>{date.day}</Text>
-                  <Text style={{fontSize: wp(3), marginLeft: wp(1)}}>
+                  <Text style={{fontSize: wp(2), fontWeight: 'bold'}}>
+                    {date.day}
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: wp(2),
+                      fontWeight: 'bold',
+                      marginLeft: wp(1),
+                    }}>
                     {date.month}
                   </Text>
-                  <Text style={{fontSize: wp(3), marginLeft: wp(1)}}>
+                  <Text
+                    style={{
+                      fontSize: wp(2),
+                      fontWeight: 'bold',
+                      marginLeft: wp(1),
+                    }}>
                     {date.date}
                   </Text>
                 </View>
               </View>
 
               <View style={style.container1}>
-                <Text>{time}</Text>
+                <Text style={{fontWeight: 'bold', fontSize: wp(3)}}>
+                  {time}
+                </Text>
               </View>
             </View>
             <View style={{flexDirection: 'row', marginTop: hp(1)}}>
@@ -140,7 +154,9 @@ const SelectSeatScreen = ({navigation, route}) => {
                 <Text>{theatre.txt}</Text>
               </View>
               <View style={style.container3}>
-                <Text style={{fontSize: wp(3)}}>{total} Tickets</Text>
+                <Text style={{fontSize: wp(3), fontWeight: 'bold'}}>
+                  {total} Tickets
+                </Text>
               </View>
             </View>
           </View>
@@ -219,9 +235,9 @@ const SelectSeatScreen = ({navigation, route}) => {
                       backgroundColor: selectedSeat.includes(index)
                         ? allcolor.theme
                         : preselectIndex.includes(index)
-                        ? 'blue'
+                        ? allcolor.theme
                         : 'transparent',
-                      borderColor: allcolor.borderColour,
+                      borderColor: allcolor.bordercolor,
                     }}>
                     <Text
                       style={{
@@ -268,17 +284,7 @@ const SelectSeatScreen = ({navigation, route}) => {
 
       {/* .......................................................*/}
       <View style={{alignItems: 'center', marginTop: hp(5)}}>
-        <View
-          style={{
-            height: hp(8),
-            width: wp(50),
-            borderWidth: 1,
-            marginTop: hp(5),
-            justifyContent: 'center',
-            alignItems: 'center',
-            borderRadius: wp(2),
-            borderColor: allcolor.borderColour,
-          }}>
+        <View style={[style.container5, {borderColor: allcolor.bordercolor}]}>
           <Text style={{fontWeight: 'bold', fontSize: wp(5)}}>RS.4050.00</Text>
           <Text style={{fontWeight: 'bold', fontSize: wp(3)}}>
             Total Amount Payable
@@ -303,7 +309,7 @@ const SelectSeatScreen = ({navigation, route}) => {
               total: total,
             })
           }>
-          <Button1 txt="Next" />
+          <NextButton txt="Next" />
         </TouchableOpacity>
       </View>
     </View>
@@ -355,5 +361,14 @@ const style = StyleSheet.create({
 
     alignItems: 'center',
     marginTop: hp(3),
+  },
+  container5: {
+    height: hp(8),
+    width: wp(50),
+    borderWidth: 1,
+    marginTop: hp(5),
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: wp(2),
   },
 });

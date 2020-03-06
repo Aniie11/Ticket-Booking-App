@@ -57,7 +57,7 @@ const TabRoutes = () => {
         options={{
           tabBarLabel: 'In Theatres',
           tabBarIcon: ({color}) => (
-            <IconImg img={allImage.film} colour={color} />
+            <IconImg img={allImage.film} color={color} />
           ),
         }}
       />
@@ -67,7 +67,7 @@ const TabRoutes = () => {
         options={{
           tabBarLabel: 'Up Coming',
           tabBarIcon: ({color}) => (
-            <IconImg img={allImage.upcomingmovie} colour={color} />
+            <IconImg img={allImage.upcomingmovie} color={color} />
           ),
         }}
       />
@@ -77,7 +77,7 @@ const TabRoutes = () => {
         options={{
           tabBarLabel: 'Theatres',
           tabBarIcon: ({color}) => (
-            <IconImg img={allImage.theater} colour={color} />
+            <IconImg img={allImage.theater} color={color} />
           ),
         }}
       />
@@ -88,7 +88,7 @@ const TabRoutes = () => {
           tabBarLabel: 'News',
 
           tabBarIcon: ({color}) => (
-            <IconImg img={allImage.news} colour={color} />
+            <IconImg img={allImage.news} color={color} />
           ),
         }}
       />
@@ -98,7 +98,7 @@ const TabRoutes = () => {
         options={{
           tabBarLabel: 'Settings',
           tabBarIcon: ({color}) => (
-            <IconImg img={allImage.setting} colour={color} />
+            <IconImg img={allImage.setting} color={color} />
           ),
         }}
       />

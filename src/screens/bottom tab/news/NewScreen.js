@@ -5,10 +5,9 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import HeaderTop from '../../../components/Header/HeaderTop';
-import {allImage, allcolor} from '../../../constants';
+import {allImage} from '../../../constants';
 import Card from '../../../components/Card/Card';
-import Button1 from '../../../components/Button/Button1';
-import Button from '../../../components/Button/Button';
+import NextButton from '../../../components/Button/NextButton';
 
 const Movies = [
   {
@@ -270,7 +269,7 @@ const NewScreen = ({navigation, route}) => {
                             data: item,
                           })
                         }>
-                        <Button1 txt="Read More" />
+                        <NextButton txt="Read More" />
                       </TouchableOpacity>
                     </View>
                   </View>
