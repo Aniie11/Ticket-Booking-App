@@ -34,15 +34,6 @@ const style = StyleSheet.create({
     justifyContent: 'flex-end',
     marginBottom: hp(10),
   },
-  // container1: {
-  //   backgroundColor: allcolor.theme1,
-  //   height: hp(5),
-  //   width: wp(65),
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  //   borderRadius: wp(2),
-  //   marginTop: hp(5),
-  // },
 });
 
 export default WelcomeScreen;

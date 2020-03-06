@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -14,9 +14,9 @@ const user = [{name: 'Hello', pw: 'world'}];
 
 const SignInScreen = ({navigation}) => {
   const [name, setname] = useState();
-
   const [pw, setpw] = useState();
   const [visible, setvisible] = useState(true);
+
   const LOGIN = () => {
     if (name === 'Hello' && pw === 'world') {
       navigation.navigate('MyTabs');
@@ -81,19 +81,10 @@ const SignInScreen = ({navigation}) => {
         </View>
       </Card>
 
-      <View
-        style={{
-          flex: 1,
-          alignItems: 'flex-end',
-          flexDirection: 'row',
-          justifyContent: 'center',
-          marginBottom: hp(8),
-        }}>
+      <View style={style.container}>
         <Text>Don't have an account?</Text>
         <TouchableOpacity onPress={() => navigation.navigate('SignUpScreen')}>
-          <Text style={{color: allcolor.theme1, marginLeft: wp(3)}}>
-            Signup
-          </Text>
+          <Text style={{color: allcolor.theme, marginLeft: wp(3)}}>Signup</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -101,3 +92,13 @@ const SignInScreen = ({navigation}) => {
 };
 
 export default SignInScreen;
+
+const style = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'flex-end',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginBottom: hp(8),
+  },
+});

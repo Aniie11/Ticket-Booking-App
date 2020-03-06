@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, ScrollView, StyleSheet} from 'react-native';
+import {View, Text, ScrollView, StyleSheet, Image} from 'react-native';
 import HeaderTop from '../../../components/Header/HeaderTop';
 import {allImage, allcolor} from '../../../constants';
 import {
@@ -7,9 +7,43 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import Card from '../../../components/Card/Card';
-import SettingText from '../../../components/Setting/SettingText';
+
+const accountOptions = [
+  'Change Password',
+  'Change Mobile Number',
+  'Two-step Verification',
+  'Change Email',
+];
+
+const SupportOptions = [
+  'Careers',
+  'Help and Support',
+  'About Us',
+  'Contact Us',
+  'Privacy Policy',
+  'Terms of Use',
+  'Disclaimer',
+];
 
 const SettingScreen = () => {
+  const settingTab = title => {
+    return (
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}>
+        <Text>{title}</Text>
+        <Image
+          resizeMode="contain"
+          style={{height: hp(5), width: wp(5), tintColor: 'grey'}}
+          source={allImage.rightarrow1}
+        />
+      </View>
+    );
+  };
+
   return (
     <View style={{flex: 1}}>
       <View style={{paddingHorizontal: wp(4)}}>
@@ -20,22 +54,17 @@ const SettingScreen = () => {
           <Card>
             <View style={{paddingHorizontal: wp(4), marginVertical: hp(2)}}>
               <Text style={style.style1}>Account</Text>
-              <SettingText text="Change Password" />
-              <SettingText text="Change Mobile Number" />
-              <SettingText text="Two-step Verification" />
-              <SettingText text="Change Email" />
+              {accountOptions.map((item, index) => (
+                <View key={index}>{settingTab(item)}</View>
+              ))}
             </View>
           </Card>
           <Card>
             <View style={{marginVertical: hp(2), marginHorizontal: wp(4)}}>
               <Text style={style.style2}>Support</Text>
-              <SettingText text="Careers" />
-              <SettingText text="Help and Support" />
-              <SettingText text="About Us" />
-              <SettingText text="Contact Us" />
-              <SettingText text="Privacy Policy" />
-              <SettingText text="Terms of Use" />
-              <SettingText text="Disclaimer" />
+              {SupportOptions.map((item, index) => (
+                <View key={index}>{settingTab(item)}</View>
+              ))}
               <Text>Logout</Text>
             </View>
           </Card>
@@ -48,15 +77,17 @@ const SettingScreen = () => {
 export default SettingScreen;
 const style = StyleSheet.create({
   style1: {
-    color: allcolor.theme1,
+    color: allcolor.theme,
     fontWeight: 'bold',
     fontSize: wp(4),
     marginBottom: hp(2),
   },
   style2: {
-    color: allcolor.theme1,
+    color: allcolor.theme,
     fontWeight: 'bold',
     fontSize: wp(4),
     marginBottom: hp(2),
   },
 });
+
+//item = title = {title}

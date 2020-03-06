@@ -21,14 +21,14 @@ const Movie = [
     text1:
       'From Warner Bros. Pictures and director James Wan comes an action-packed adventure that spans the vast, visually breathtaking underwater world of the seven seas, "Aquaman," starring Jason Momoa in the title role. The film reveals the origin story of half-human, half-Atlantean Arthur Curry and takes him on the journey of his lifetime--one that will not only force him to face who he really is, but to discover if he is worthy of who he was born to be... a king.',
 
-    Genre: ['Action & Adventure', 'Science Fiction', 'Fantasy'],
+    Genre: ['Action & Adventure |', 'Science Fiction |', 'Fantasy'],
   },
   {
     text: 'Avengers',
     img: allImage.avengers,
     text1:
       'The grave course of events set in motion by Thanos that wiped out half the universe and fractured the Avengers ranks compels the remaining Avengers to take one final stand in Marvel Studios',
-    Genre: ['Action & Adventure', ' Drama', 'Science Fiction & Fantasy'],
+    Genre: ['Action & Adventure |', ' Drama', 'Science Fiction & Fantasy'],
   },
   {
     text: 'Rampage',

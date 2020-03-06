@@ -29,7 +29,7 @@ const PaymentScreen = ({navigation, route}) => {
   const [display1, setdisplay1] = useState();
   const [firstname, setfirstname] = useState();
   const [number, setnumber] = useState();
-  const [Email, setEmail] = useState();
+  const [email, setemail] = useState();
   const [lastname, setlastname] = useState();
   const [username, setusername] = useState();
 
@@ -66,7 +66,7 @@ const PaymentScreen = ({navigation, route}) => {
               text1="Enter Mobile Number"
             />
             <InputText
-              onChangeUpdateText={val => setemaile(val)}
+              onChangeUpdateText={val => setemail(val)}
               text="Email"
               text1="abc@gmail.com"
             />
@@ -234,7 +234,7 @@ const PaymentScreen = ({navigation, route}) => {
               style={{
                 fontSize: wp(3),
                 fontWeight: 'bold',
-                color: allcolor.theme1,
+                color: allcolor.theme,
               }}>
               300
             </Text>
@@ -253,7 +253,7 @@ const PaymentScreen = ({navigation, route}) => {
               style={[
                 style.container13,
                 {
-                  backgroundColor: touch ? allcolor.theme1 : null,
+                  backgroundColor: touch ? allcolor.theme : null,
                   borderColor: allcolor.borderColour,
                 },
               ]}>
@@ -265,7 +265,7 @@ const PaymentScreen = ({navigation, route}) => {
               style={[
                 style.container14,
                 {
-                  backgroundColor: touchable ? allcolor.theme1 : null,
+                  backgroundColor: touchable ? allcolor.theme : null,
                   borderColor: allcolor.borderColour,
                 },
               ]}>

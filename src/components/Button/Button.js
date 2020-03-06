@@ -12,7 +12,7 @@ const Button = ({text, txtOverride, txt1override}) => {
       style={[
         style.container,
         {
-          backgroundColor: allcolor.theme1,
+          backgroundColor: allcolor.theme,
 
           ...txtOverride,
         },

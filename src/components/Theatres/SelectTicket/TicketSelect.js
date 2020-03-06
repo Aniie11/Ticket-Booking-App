@@ -22,7 +22,6 @@ const datas = [
   '13',
   '14',
   '15',
-  '16',
 ];
 const TicketSelect = ({txt, selectedTicket, selectTicket}) => {
   return (
@@ -41,7 +40,7 @@ const TicketSelect = ({txt, selectedTicket, selectTicket}) => {
                   style.container2,
                   {
                     backgroundColor:
-                      index === selectedTicket.index ? allcolor.theme1 : null,
+                      index === selectedTicket.index ? allcolor.theme : null,
                     borderColor: allcolor.borderColour,
                   },
                 ]}>

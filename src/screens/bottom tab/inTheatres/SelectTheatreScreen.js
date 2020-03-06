@@ -149,7 +149,7 @@ const SelectTheatreScreen = ({navigation, route}) => {
                       borderRadius: wp(2),
                       marginTop: hp(2),
                       backgroundColor:
-                        index === touchable.index ? allcolor.theme1 : null,
+                        index === touchable.index ? allcolor.theme : null,
                     }}>
                     <Text
                       style={{

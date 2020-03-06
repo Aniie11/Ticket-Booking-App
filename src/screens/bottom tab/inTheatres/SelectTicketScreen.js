@@ -156,7 +156,7 @@ const SelectTicketScreen = ({navigation, route}) => {
                         style.container5,
                         {
                           backgroundColor:
-                            index === touch ? allcolor.theme1 : null,
+                            index === touch ? allcolor.theme : null,
                           borderColor: allcolor.borderColour,
                         },
                       ]}>

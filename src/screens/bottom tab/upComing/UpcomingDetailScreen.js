@@ -34,14 +34,15 @@ const UpcomingDetailScreen = ({navigation, route}) => {
             style={{
               fontSize: wp(3),
               marginTop: hp(0),
-              fontWeight: 'bold',
+
               textAlign: 'justify',
             }}>
             {data.text1}
           </Text>
           <Text style={{fontSize: wp(4), marginTop: hp(3), fontWeight: 'bold'}}>
-            Genre:{data.Genre}
+            Genre
           </Text>
+          <Text style={{fontSize: wp(4)}}>{data.Genre} |</Text>
         </View>
       </ScrollView>
     </View>

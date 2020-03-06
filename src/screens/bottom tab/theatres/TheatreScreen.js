@@ -8,12 +8,11 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import TheatreScreenComponent from '../../../components/Theatres/TheatreScreenComponent';
-import Card from '../../../components/Card/Card';
 
 const movieHall = [
   {
     img: allImage.hall,
-    txt: 'Savoy Premier',
+    txt: 'Savoy Premier-Wellawattem',
     txt1: 'Ramkrishna Road',
     txt2: '+94 11 744 6223',
     txt3: 'savoy@eapmovies.com',
@@ -50,9 +49,10 @@ const TheatreScreen = () => {
       <HeaderTop text="EAP Movies" rightIcon={allImage.user} />
 
       <FlatList
-        contentContainerStyle={{paddingBottom: hp(15)}} //ali scrolll garauxa (scroll navako bela)
+        contentContainerStyle={{paddingBottom: hp(15)}}
         showsVerticalScrollIndicator={false}
         data={movieHall}
+        keyExtractor={item => item.id}
         renderItem={({item}) => (
           <TheatreScreenComponent
             img={item.img}

@@ -217,7 +217,7 @@ const SelectSeatScreen = ({navigation, route}) => {
                       marginRight: spaceArr.includes(index) ? wp(4) : wp(1),
                       marginBottom: hp(1),
                       backgroundColor: selectedSeat.includes(index)
-                        ? allcolor.theme1
+                        ? allcolor.theme
                         : preselectIndex.includes(index)
                         ? 'blue'
                         : 'transparent',

@@ -271,7 +271,6 @@ const HomeScreen = ({navigation}) => {
               <View key={index} style={{marginTop: hp(4)}}>
                 <MovieList
                   buyTicket={() =>
-                    //component bata yeta props pathako
                     navigation.navigate('TicketBookingScreen', {
                       data: {
                         img: item.img,
@@ -282,7 +281,7 @@ const HomeScreen = ({navigation}) => {
                   }
                   onPress={() =>
                     navigation.navigate('MovieDetailScreen', {
-                      data: item, //data bhnya naam deko
+                      data: item,
                     })
                   }
                   img={item.img}

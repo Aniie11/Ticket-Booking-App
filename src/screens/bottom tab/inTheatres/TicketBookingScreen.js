@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -7,7 +7,7 @@ import {
 
 import HeaderTop from '../../../components/Header/HeaderTop';
 import {allImage, allcolor} from '../../../constants';
-import BookingDate from '../../../components/Home/BookingDate';
+
 import Button1 from '../../../components/Button/Button1';
 
 const date = [
@@ -42,155 +42,136 @@ const TicketBookingScreen = ({navigation, route}) => {
     index: '',
   });
 
-  console.warn(touchable);
-
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1, paddingHorizontal: wp(4)}}>
       <HeaderTop
         onpress={() => navigation.goBack(null)}
         text="Buy Tickets"
         leftIcon={allImage.leftarrow}
       />
-      <View
-        style={{
-          paddingHorizontal: wp(4),
-          marginTop: hp(4),
-        }}>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <Image style={{height: hp(15), width: wp(30)}} source={data.img} />
-          <View>
-            <Text style={{fontWeight: 'bold', fontSize: wp(4)}}>
-              {data.text}
-            </Text>
-            <Text style={{fontSize: wp(2)}}>{data.Genres}</Text>
-            <View style={{flexDirection: 'row', marginTop: hp(2)}}>
-              <View
-                style={{
-                  width: wp(35),
-                  height: hp(4),
-                  borderWidth: 1,
-                  borderRadius: wp(15),
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                  }}>
-                  <Text style={{fontSize: wp(3)}}>{touchable.day}</Text>
-                  <Text style={{fontSize: wp(3), marginLeft: wp(1)}}>
-                    {touchable.month}
-                  </Text>
-                  <Text style={{fontSize: wp(3), marginLeft: wp(1)}}>
-                    {touchable.date}
-                  </Text>
-                </View>
-              </View>
 
+      <View style={style.container}>
+        <Image style={{height: hp(15), width: wp(30)}} source={data.img} />
+        <View>
+          <Text style={{fontWeight: 'bold', fontSize: wp(4)}}>{data.text}</Text>
+          <Text style={{fontSize: wp(2)}}>{data.Genres}</Text>
+          <View style={{flexDirection: 'row', marginTop: hp(2)}}>
+            <View style={style.container1}>
               <View
                 style={{
-                  width: wp(20),
-                  height: hp(4),
-                  borderWidth: 1,
-                  borderRadius: wp(15),
-                  marginLeft: wp(3),
-                  justifyContent: 'center',
-                  alignItems: 'center',
+                  flexDirection: 'row',
                 }}>
-                <Text style={{fontSize: wp(3)}}>{touch.selectedTime} </Text>
+                <Text style={{fontSize: wp(3)}}>{touchable.day}</Text>
+                <Text style={{fontSize: wp(3), marginLeft: wp(1)}}>
+                  {touchable.month}
+                </Text>
+                <Text style={{fontSize: wp(3), marginLeft: wp(1)}}>
+                  {touchable.date}
+                </Text>
               </View>
             </View>
-          </View>
-        </View>
-        <View style={{marginTop: hp(2)}}>
-          <Text>Select Date</Text>
-          <View
-            style={{
-              flexDirection: 'row',
-              flexWrap: 'wrap',
-            }}>
-            {date.map((item, index) => {
-              return (
-                <TouchableOpacity
-                  key={index}
-                  onPress={() => {
-                    settouchable({
-                      month: item.month,
-                      date: item.date,
-                      day: item.day,
-                      index: index,
-                    });
-                  }}>
-                  <View
-                    style={{
-                      width: wp(92) / 5,
-                      alignItems: 'center',
-                    }}>
-                    <BookingDate
-                      index={index}
-                      onSelect={touchable.index}
-                      month={item.month}
-                      date={item.date}
-                      day={item.day}
-                    />
-                  </View>
-                </TouchableOpacity>
-              );
-            })}
-          </View>
-        </View>
-        <View style={{marginTop: hp(3)}}>
-          <Text>Select Show Time</Text>
 
-          <View
-            style={{
-              flexDirection: 'row',
-              flexWrap: 'wrap',
-            }}>
-            {time.map((item, index) => {
-              return (
-                <TouchableOpacity
-                  key={index}
-                  onPress={() =>
-                    settouch({
-                      selectedTime: item,
-                      index: index,
-                    })
-                  }>
-                  <View
-                    style={{
-                      width: wp(85) / 3,
-                      height: hp(4),
-                      borderWidth: 1,
-                      borderRadius: wp(2),
-                      justifyContent: 'center',
-                      alignItems: 'center',
-
-                      marginTop: hp(1),
-                      marginLeft: wp(2),
-                      backgroundColor:
-                        index === touch.index ? allcolor.theme1 : null,
-                      borderColor: allcolor.borderColour,
-                    }}>
-                    <Text
-                      style={{color: index === touch.index ? 'white' : null}}>
-                      {item}
-                    </Text>
-                  </View>
-                </TouchableOpacity>
-              );
-            })}
+            <View style={style.container2}>
+              <Text style={{fontSize: wp(3)}}>{touch.selectedTime} </Text>
+            </View>
           </View>
         </View>
       </View>
 
-      <View
-        style={{
-          flex: 1,
-          alignItems: 'center',
-          justifyContent: 'flex-end',
-          marginBottom: hp(5),
-        }}>
+      {/* ...........................................................................................................................................*/}
+
+      <View style={{marginTop: hp(2)}}>
+        <Text>Select Date</Text>
+        <View
+          style={{
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+          }}>
+          {date.map((item, index) => {
+            return (
+              <TouchableOpacity
+                key={index}
+                onPress={() =>
+                  settouchable({
+                    month: item.month,
+                    date: item.date,
+                    day: item.day,
+                    index: index,
+                  })
+                }>
+                <View
+                  style={[
+                    style.container3,
+                    {
+                      backgroundColor:
+                        index === touchable.index
+                          ? allcolor.theme
+                          : 'transparent',
+                    },
+                  ]}>
+                  <Text
+                    style={{
+                      fontSize: wp(3),
+                      color: index === touchable.index ? 'white' : 'black',
+                    }}>
+                    {item.month}
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: wp(3),
+                      fontWeight: 'bold',
+                      color: index === touchable.index ? 'white' : 'black',
+                    }}>
+                    {item.date}
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: wp(2),
+                      color: index === touchable.index ? 'white' : 'black',
+                    }}>
+                    {item.day}
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
+        <Text style={{marginTop: hp(2)}}>Select Show Time</Text>
+        <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
+          {time.map((item, index) => {
+            return (
+              <TouchableOpacity
+                key={index}
+                onPress={() =>
+                  settouch({
+                    selectedTime: item,
+                    index: index,
+                  })
+                }>
+                <View
+                  style={[
+                    style.container4,
+                    {
+                      backgroundColor:
+                        index === touch.index ? allcolor.theme : 'transparent',
+                    },
+                  ]}>
+                  <Text
+                    style={{
+                      fontSize: wp(3),
+                      color: index === touch.index ? 'white' : 'black',
+                    }}>
+                    {item}
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
+      </View>
+
+      {/*......................................................................................................................................................... */}
+      <View style={style.container5}>
         <TouchableOpacity
           onPress={() => {
             if (touchable.month !== '' && touch.selectedTime !== '') {
@@ -215,3 +196,55 @@ const TicketBookingScreen = ({navigation, route}) => {
 };
 
 export default TicketBookingScreen;
+const style = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: hp(4),
+  },
+  container1: {
+    width: wp(35),
+    height: hp(4),
+    borderWidth: 1,
+    borderRadius: wp(15),
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  container2: {
+    width: wp(20),
+    height: hp(4),
+    borderWidth: 1,
+    borderRadius: wp(15),
+    marginLeft: wp(3),
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  container3: {
+    borderWidth: 1,
+    borderRadius: wp(3),
+    height: hp(8),
+    width: wp(15),
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: hp(2),
+    borderColor: '#a6a6a6',
+    marginLeft: wp(3),
+  },
+  container4: {
+    borderWidth: 1,
+    borderRadius: wp(3),
+    height: hp(4),
+    width: wp(80) / 3,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: hp(1),
+    borderColor: '#a6a6a6',
+    marginLeft: wp(3),
+  },
+  container5: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    marginBottom: hp(5),
+  },
+});

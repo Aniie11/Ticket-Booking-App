@@ -20,7 +20,6 @@ const SignUpScreen = ({navigation}) => {
   const [firstname, setfirstname] = useState();
   const [Email, setEmail] = useState();
   const [lastname, setlastname] = useState();
-  const [username, setusername] = useState();
 
   const [pw, setpw] = useState();
   return (
@@ -38,7 +37,6 @@ const SignUpScreen = ({navigation}) => {
               txtInputOverride={{width: wp(38)}}
             />
             <InputText
-              onChangeUpdateText={val => setusername(val)}
               onChangeUpdateText={val => setlastname(val)}
               text="Last name"
               text1="Enter LastName"
@@ -104,9 +102,7 @@ const SignUpScreen = ({navigation}) => {
           Already have an account?
         </Text>
         <TouchableOpacity onPress={() => navigation.navigate('SignInScreen')}>
-          <Text style={{color: allcolor.theme1, marginLeft: wp(3)}}>
-            Signin
-          </Text>
+          <Text style={{color: allcolor.theme, marginLeft: wp(3)}}>Signin</Text>
         </TouchableOpacity>
       </View>
     </View>
