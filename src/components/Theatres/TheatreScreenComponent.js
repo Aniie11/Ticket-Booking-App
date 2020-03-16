@@ -4,7 +4,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {allImage, allcolor, globalStyle} from '../../constants';
+import {allImage, allcolor} from '../../constants';
 import Card from '../../components/Card/Card';
 
 const selectingImage = [
@@ -65,18 +65,13 @@ const TheatreScreenComponent = ({img, txt, txt1, txt2, txt3}) => {
                 ))}
               </View>
               <View style={{justifyContent: 'space-around'}}>
-                <Text style={{fontSize: wp(2), marginLeft: wp(4)}}>{txt1}</Text>
-                <Text style={{fontSize: wp(2), marginLeft: wp(4)}}>{txt2}</Text>
-                <Text style={{fontSize: wp(2), marginLeft: wp(4)}}>{txt3}</Text>
+                <Text style={style.textStyle}>{txt1}</Text>
+                <Text style={style.textStyle}>{txt2}</Text>
+                <Text style={style.textStyle}>{txt3}</Text>
               </View>
             </View>
 
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'flex-end',
-                justifyContent: 'flex-end',
-              }}>
+            <View style={style.container1}>
               {selectingImage.map((item, index) => {
                 return (
                   <View key={index} style={{marginLeft: wp(3)}}>
@@ -130,5 +125,14 @@ const style = StyleSheet.create({
     width: wp(40),
     borderTopLeftRadius: wp(4),
     borderBottomLeftRadius: wp(4),
+  },
+  textStyle: {
+    fontSize: wp(2),
+    marginLeft: wp(4),
+  },
+  container1: {
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
   },
 });

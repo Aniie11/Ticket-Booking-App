@@ -6,15 +6,15 @@ import {
 } from 'react-native-responsive-screen';
 import {allcolor} from '../../constants';
 
-const HeaderTop = ({onpress, text, leftIcon, rightIcon}) => {
+const HeaderTop = ({onpress, text, leftArrow, rightArrow}) => {
   return (
     <View style={style.container}>
       <TouchableOpacity onPress={onpress}>
-        {leftIcon ? (
+        {leftArrow ? (
           <Image
             resizeMode="contain"
             style={{height: hp(6), width: wp(6)}}
-            source={leftIcon}
+            source={leftArrow}
           />
         ) : (
           <View />
@@ -30,11 +30,11 @@ const HeaderTop = ({onpress, text, leftIcon, rightIcon}) => {
         {text}
       </Text>
 
-      {rightIcon ? (
+      {rightArrow ? (
         <Image
           resizeMode="contain"
           style={{height: hp(6), width: wp(6)}}
-          source={rightIcon}
+          source={rightArrow}
         />
       ) : (
         <View />

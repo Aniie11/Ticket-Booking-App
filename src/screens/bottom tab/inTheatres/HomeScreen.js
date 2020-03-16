@@ -261,7 +261,7 @@ const Box = [
 const HomeScreen = ({navigation}) => {
   return (
     <View style={{flex: 1}}>
-      <HeaderTop text="EAP Movies" rightIcon={allImage.user} />
+      <HeaderTop text="EAP Movies" rightArrow={allImage.user} />
       <ScrollView
         contentContainerStyle={{paddingBottom: hp(10)}}
         showsVerticalScrollIndicator={false}>
@@ -270,7 +270,7 @@ const HomeScreen = ({navigation}) => {
             return (
               <View key={index} style={{marginTop: hp(4)}}>
                 <MovieList
-                  buyTicket={() =>
+                  onpress={() =>
                     navigation.navigate('TicketBookingScreen', {
                       data: {
                         img: item.img,

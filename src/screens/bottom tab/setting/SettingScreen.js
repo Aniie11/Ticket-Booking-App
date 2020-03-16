@@ -28,12 +28,7 @@ const SupportOptions = [
 const SettingScreen = () => {
   const settingTab = title => {
     return (
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}>
+      <View style={style.container}>
         <Text>{title}</Text>
         <Image
           resizeMode="contain"
@@ -47,7 +42,7 @@ const SettingScreen = () => {
   return (
     <View style={{flex: 1}}>
       <View style={{paddingHorizontal: wp(4)}}>
-        <HeaderTop text="Movies" rightIcon={allImage.user} />
+        <HeaderTop text="Movies" rightArrow={allImage.user} />
       </View>
       <ScrollView contentContainerStyle={{paddingBottom: hp(10)}}>
         <View>
@@ -76,6 +71,11 @@ const SettingScreen = () => {
 
 export default SettingScreen;
 const style = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
   style1: {
     color: allcolor.theme,
     fontWeight: 'bold',

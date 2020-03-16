@@ -46,7 +46,7 @@ const TabRoutes = () => {
     <Tab.Navigator
       screenOptions={{tabBarVisible: true}}
       tabBarOptions={{
-        activeTintColor: 'red', //label and icon color chnage hunxa but icon ma props pathayera garnu parxa
+        activeTintColor: 'red', //label and icon color can be  change  but we have to send props in icon
         style: {
           height: hp(8),
         },

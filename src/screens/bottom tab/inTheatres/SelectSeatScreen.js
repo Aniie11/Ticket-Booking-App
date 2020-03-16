@@ -95,16 +95,32 @@ const SelectSeatScreen = ({navigation, route}) => {
   const [selectedSeat, setSelectedSeat] = useState([]);
 
   const [preselectIndex, setPreselectIndex] = useState([14, 20]);
+  const onpress = () => {
+    console.log(index, 'Index external');
+    if (selectedSeat.includes(index)) {
+      let arr = [];
+      arr = [...selectedSeat];
+      console.log(index, 'Index internal');
+      // console.log(arr, 'Seat');
+      arr.splice(index, 1);
+      console.log(arr, 'Seat spliced');
+      setSelectedSeat(arr);
+    } else {
+      seat = [...selectedSeat];
+      seat.push(index);
+      setSelectedSeat(seat);
+    }
+  };
 
   return (
     <View style={{flex: 1}}>
       <HeaderTop
         onpress={() => navigation.goBack(null)}
         text="Buy Tickets"
-        leftIcon={allImage.leftarrow}
+        leftArrow={allImage.leftarrow}
       />
       <View style={{paddingHorizontal: wp(5)}}>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <View style={{...globalStyle.rowSpace}}>
           <Image style={{height: hp(15), width: wp(30)}} source={data.img} />
           <View>
             <Text style={{fontWeight: 'bold', fontSize: wp(4)}}>
@@ -121,32 +137,14 @@ const SelectSeatScreen = ({navigation, route}) => {
                   style={{
                     ...globalStyle.itemInCenter,
                   }}>
-                  <Text style={{fontSize: wp(2), fontWeight: 'bold'}}>
-                    {date.day}
-                  </Text>
-                  <Text
-                    style={{
-                      fontSize: wp(2),
-                      fontWeight: 'bold',
-                      marginLeft: wp(1),
-                    }}>
-                    {date.month}
-                  </Text>
-                  <Text
-                    style={{
-                      fontSize: wp(2),
-                      fontWeight: 'bold',
-                      marginLeft: wp(1),
-                    }}>
-                    {date.date}
-                  </Text>
+                  <Text style={style.txtStyle1}>{date.day}</Text>
+                  <Text style={style.txtStyle}>{date.month}</Text>
+                  <Text style={style.txtStyle}>{date.date}</Text>
                 </View>
               </View>
 
               <View style={style.container1}>
-                <Text style={{fontWeight: 'bold', fontSize: wp(3)}}>
-                  {time}
-                </Text>
+                <Text style={style.txtStyle1}>{time}</Text>
               </View>
             </View>
             <View style={{flexDirection: 'row', marginTop: hp(1)}}>
@@ -154,9 +152,7 @@ const SelectSeatScreen = ({navigation, route}) => {
                 <Text>{theatre.txt}</Text>
               </View>
               <View style={style.container3}>
-                <Text style={{fontSize: wp(3), fontWeight: 'bold'}}>
-                  {total} Tickets
-                </Text>
+                <Text style={style.txtStyle2}>{total} Tickets</Text>
               </View>
             </View>
           </View>
@@ -167,36 +163,17 @@ const SelectSeatScreen = ({navigation, route}) => {
       </View>
       {/* .......................................................*/}
       <View style={{flex: 1}}>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-around',
-          }}>
+        <View style={style.container7}>
           <View>
             {data1.map((item, index) => {
               return (
-                <View
-                  key={index}
-                  style={{
-                    marginBottom: hp(1),
-                    width: wp(7),
-                    height: wp(7),
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  }}>
-                  <Text style={{fontWeight: 'bold', fontSize: wp(3)}}>
-                    {item}
-                  </Text>
+                <View key={index} style={style.container6}>
+                  <Text style={style.txtStyle2}>{item}</Text>
                 </View>
               );
             })}
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              flexWrap: 'wrap',
-              width: wp(87),
-            }}>
+          <View style={style.container8}>
             {ticketArr.map((item, index) => {
               if (
                 index === 0 ||
@@ -207,38 +184,21 @@ const SelectSeatScreen = ({navigation, route}) => {
                 return (
                   <TouchableOpacity
                     key={index}
-                    onPress={() => {
-                      console.log(index, 'Index external');
-                      if (selectedSeat.includes(index)) {
-                        let arr = [];
-                        arr = [...selectedSeat];
-                        console.log(index, 'Index internal');
-                        // console.log(arr, 'Seat');
-                        arr.splice(index, 1);
-                        console.log(arr, 'Seat spliced');
-                        setSelectedSeat(arr);
-                      } else {
-                        seat = [...selectedSeat];
-                        seat.push(index);
-                        setSelectedSeat(seat);
-                      }
-                    }}
-                    style={{
-                      height: wp(7),
-                      width: wp(7),
-                      borderWidth: 1,
-                      borderRadius: wp(1),
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      marginRight: spaceArr.includes(index) ? wp(4) : wp(1),
-                      marginBottom: hp(1),
-                      backgroundColor: selectedSeat.includes(index)
-                        ? allcolor.theme
-                        : preselectIndex.includes(index)
-                        ? allcolor.theme
-                        : 'transparent',
-                      borderColor: allcolor.bordercolor,
-                    }}>
+                    onPress={onpress}
+                    style={[
+                      style.container9,
+                      {
+                        ...globalStyle.makeInCenter,
+                        marginRight: spaceArr.includes(index) ? wp(4) : wp(1),
+                        marginBottom: hp(1),
+                        backgroundColor: selectedSeat.includes(index)
+                          ? allcolor.theme
+                          : preselectIndex.includes(index)
+                          ? allcolor.theme
+                          : 'transparent',
+                        borderColor: allcolor.bordercolor,
+                      },
+                    ]}>
                     <Text
                       style={{
                         fontSize: wp(3),
@@ -263,18 +223,8 @@ const SelectSeatScreen = ({navigation, route}) => {
           <View>
             {data1.map((item, index) => {
               return (
-                <View
-                  key={index}
-                  style={{
-                    marginBottom: hp(1),
-                    width: wp(7),
-                    height: wp(7),
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  }}>
-                  <Text style={{fontWeight: 'bold', fontSize: wp(3)}}>
-                    {item}
-                  </Text>
+                <View key={index} style={style.container10}>
+                  <Text style={style.txtStyle2}>{item}</Text>
                 </View>
               );
             })}
@@ -291,18 +241,11 @@ const SelectSeatScreen = ({navigation, route}) => {
           </Text>
         </View>
       </View>
-      <View
-        style={{
-          alignItems: 'center',
-          flex: 1,
-          justifyContent: 'flex-end',
-          marginBottom: hp(5),
-        }}>
+      <View style={style.container11}>
         <TouchableOpacity
           onPress={() =>
             navigation.navigate('PaymentScreen', {
               data: data,
-
               date: date,
               time: time,
               theatre: theatre,
@@ -371,4 +314,49 @@ const style = StyleSheet.create({
     alignItems: 'center',
     borderRadius: wp(2),
   },
+  container6: {
+    marginBottom: hp(1),
+    width: wp(7),
+    height: wp(7),
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  container7: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+  container8: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    width: wp(87),
+  },
+  container9: {
+    height: wp(7),
+    width: wp(7),
+    borderWidth: 1,
+    borderRadius: wp(1),
+  },
+  container10: {
+    marginBottom: hp(1),
+    width: wp(7),
+    height: wp(7),
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  container11: {
+    alignItems: 'center',
+    flex: 1,
+    justifyContent: 'flex-end',
+    marginBottom: hp(5),
+  },
+  txtStyle: {
+    fontSize: wp(2),
+    fontWeight: 'bold',
+    marginLeft: wp(1),
+  },
+  txtStyle1: {
+    fontSize: wp(2),
+    fontWeight: 'bold',
+  },
+  txtStyle2: {fontSize: wp(3), fontWeight: 'bold'},
 });

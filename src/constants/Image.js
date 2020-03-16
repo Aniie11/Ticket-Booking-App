@@ -1,25 +1,46 @@
+//Welcome Screen
 import LOGO from '../resource/LOGO.png';
+//HomeScreen
+import deadpool from '../resource/deadpool.jpg';
+import incredible from '../resource/incredible.jpg';
+import shapeofwater from '../resource/shapeofwater.jpg';
+import tombraider from '../resource/tombraider.jpg';
 import user from '../resource/user.png';
 import theater from '../resource/theater.png';
 import news from '../resource/news.png';
 import setting from '../resource/setting.png';
 import film from '../resource/film.png';
 import upcomingmovie from '../resource/upcomingmovie.png';
-import leftarrow from '../resource/leftarrow.png';
-import rightarrow from '../resource/rightarrow.png';
-import rightarrow1 from '../resource/rightarrow1.png';
+//Upcoming Screen
 import aquaman from '../resource/aquaman.jpg';
 import blackpanther from '../resource/blackpanther.jpg';
-import deadpool from '../resource/deadpool.jpg';
-import incredible from '../resource/incredible.jpg';
-import joker from '../resource/joker.jpg';
-import justiceleague from '../resource/justiceleague.jpg';
-import rampage from '../resource/rampage.jpg';
-import shapeofwater from '../resource/shapeofwater.jpg';
-import starwar from '../resource/starwar.jpg';
 import avengers from '../resource/avengers.jpg';
-import tombraider from '../resource/tombraider.jpg';
 import wrinkeintime from '../resource/wrinkleintime.jpg';
+//theatreScreen
+import hall from '../resource/hall.jpeg';
+import hall1 from '../resource/hall1.jpg';
+import hall2 from '../resource/hall2.jpg';
+import hall3 from '../resource/hall3.jpg';
+import hall4 from '../resource/hall4.jpg';
+import popcorn from '../resource/popcorn.png';
+import pin from '../resource/pin.png';
+import mail from '../resource/mail.png';
+import phone from '../resource/phone.png';
+import foodtruck from '../resource/foodtruck.png';
+import menutheatre from '../resource/menutheatre.png';
+//NewsScreen
+import starwar from '../resource/starwar.jpg';
+import rightarrow from '../resource/rightarrow.png';
+import justiceleague from '../resource/justiceleague.jpg';
+import leftarrow from '../resource/leftarrow.png';
+
+//Setting Screen
+import rightarrow1 from '../resource/rightarrow1.png';
+
+import joker from '../resource/joker.jpg';
+
+import rampage from '../resource/rampage.jpg';
+//moviedetailScreen
 import alexandre from '../resource/alexandre.jpg';
 import alicia from '../resource/alicia.jpg';
 import antonio from '../resource/antonio.jpg';
@@ -43,21 +64,12 @@ import Morena from '../resource/Morena.jpg';
 import nick from '../resource/nick.jpg';
 import octavia from '../resource/octavia.jpg';
 import sarah from '../resource/sarah.jpg';
-import popcorn from '../resource/popcorn.png';
-import pin from '../resource/pin.png';
-import mail from '../resource/mail.png';
-import phone from '../resource/phone.png';
-import foodtruck from '../resource/foodtruck.png';
-import menutheatre from '../resource/menutheatre.png';
-import hall from '../resource/hall.jpeg';
-import hall1 from '../resource/hall1.jpg';
-import hall2 from '../resource/hall2.jpg';
-import hall3 from '../resource/hall3.jpg';
-import hall4 from '../resource/hall4.jpg';
+//paymentScreen
 import tick from '../resource/tick.png';
 import visa from '../resource/visa.png';
 import mastercard from '../resource/mastercard.png';
 import booking from '../resource/booking.png';
+
 export default {
   LOGO,
   user,

@@ -13,13 +13,13 @@ import HeaderTop from '../../components/Header/HeaderTop';
 const user = [{name: 'Hello', pw: 'world'}];
 
 const SignInScreen = ({navigation}) => {
-  const [name, setname] = useState();
-  const [pw, setpw] = useState();
-  const [visible, setvisible] = useState(true);
+  const [name, setName] = useState();
+  const [pw, setPw] = useState();
+  const [visible, setVisible] = useState(true);
 
   const LOGIN = () => {
     if (name === 'Hello' && pw === 'world') {
-      navigation.navigate('MyTabs');
+      navigation.navigate('TabRoutes');
     } else if (name !== 'Hello') {
       alert('Incorrect Username');
     } else if (pw !== 'world') {
@@ -33,22 +33,15 @@ const SignInScreen = ({navigation}) => {
       <Card>
         <View style={{padding: wp(5)}}>
           <InputText
-            onChangeUpdateText={val => setname(val)}
+            onChangeUpdateText={val => setName(val)}
             textValue={name}
             text="Username"
             text1="Enter Your Username"
           />
-          <View
-            style={{
-              position: 'absolute',
-              marginTop: hp(18),
-              marginLeft: wp(75),
-
-              zIndex: 1000,
-            }}>
-            <TouchableOpacity onPress={() => setvisible(!visible)}>
-              {/*   // onPressIn={() => setvisible(false)}
-          // onPressOut={() => setvisible(true)}} */}
+          <View style={style.container1}>
+            <TouchableOpacity onPress={() => setVisible(!visible)}>
+              {/*   // onPressIn={() => setVisible(false)}
+          // onPressOut={() => setVisible(true)}} */}
 
               <Image
                 resizeMode="contain"
@@ -63,7 +56,7 @@ const SignInScreen = ({navigation}) => {
           </View>
 
           <InputText
-            onChangeUpdateText={val => setpw(val)} //
+            onChangeUpdateText={val => setPw(val)} //
             textValue={pw}
             text="Password"
             text1="Enter Password"
@@ -100,5 +93,12 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     marginBottom: hp(8),
+  },
+  container1: {
+    position: 'absolute',
+    marginTop: hp(18),
+    marginLeft: wp(75),
+
+    zIndex: 1000,
   },
 });

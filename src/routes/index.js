@@ -27,7 +27,7 @@ const MyStack = () => {
       <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
 
       <Stack.Screen name="TabRoutes" component={TabRoutes} />
-      {/* This is for first tab  Screen(bottom tab hatauna yeta rakheko('buttom tab baira))*/}
+      {/* This is for first tab  Screen*/}
       <Stack.Screen name="MovieDetailScreen" component={MovieDetailScreen} />
       <Stack.Screen
         name="TicketBookingScreen"
@@ -40,9 +40,9 @@ const MyStack = () => {
       <Stack.Screen name="SelectTicketScreen" component={SelectTicketScreen} />
       <Stack.Screen name="SelectSeatScreen" component={SelectSeatScreen} />
       <Stack.Screen name="PaymentScreen" component={PaymentScreen} />
-      {/* NewStack bata yeta lyako button tab hatauna */}
+      {/* Bringing from newStack, Done this to remove bottonTab */}
       <Stack.Screen component={NewsReviewScreen} name="NewsReviewScreen" />
-      {/* UpcomingStack bata yeta lyako button tab hatauna */}
+      {/*Bringing from upcoming Stack, Done this to remove bottonTab  */}
       <Stack.Screen
         component={UpcomingDetailScreen}
         name="UpcomingDetailScreen"

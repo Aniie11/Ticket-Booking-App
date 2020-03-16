@@ -36,28 +36,54 @@ const SelectTicketScreen = ({navigation, route}) => {
   const date = route.params.date;
   const time = route.params.time;
   const theatre = route.params.theatre;
-  const [touch, settouch] = useState();
+  const [touch, setTouch] = useState();
 
-  const [total, settotal] = useState();
-  const [halfT, sethalfT] = useState({
+  const [total, setTotal] = useState();
+  const [halfT, setHalfT] = useState({
     item: '',
     index: '',
   });
-  const [fullT, setfullT] = useState({
+  const [fullT, setFullT] = useState({
     item: '',
     index: '',
   });
+
+  const selectTicket2 = item => {
+    setHalfT({
+      item: item.item,
+      index: item.index,
+    });
+    if (fullT.item !== '') {
+      let total = parseInt(item.item) + parseInt(fullT.item);
+      setTotal(total);
+    } else {
+      setTotal(item.item);
+    }
+  };
+
+  const selectTicket1 = item => {
+    setFullT({
+      item: item.item,
+      index: item.index,
+    });
+    if (halfT.item !== '') {
+      let total = parseInt(item.item) + parseInt(fullT.item);
+      setTotal(total);
+    } else {
+      setTotal(item.item);
+    }
+  };
 
   return (
     <View style={{flex: 1}}>
       <HeaderTop
         onpress={() => navigation.goBack(null)}
         text="Buy Tickets"
-        leftIcon={allImage.leftarrow}
+        leftArrow={allImage.leftarrow}
       />
       <ScrollView contentContainerStyle={{paddingBottom: hp(5)}}>
         <View style={{paddingHorizontal: wp(5)}}>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <View style={{...globalStyle.rowSpace}}>
             <Image style={{height: hp(15), width: wp(30)}} source={data.img} />
             <View>
               <Text style={{fontWeight: 'bold', fontSize: wp(4)}}>
@@ -74,22 +100,8 @@ const SelectTicketScreen = ({navigation, route}) => {
                     <Text style={{fontSize: wp(2), fontWeight: 'bold'}}>
                       {date.day}
                     </Text>
-                    <Text
-                      style={{
-                        fontSize: wp(2),
-                        fontWeight: 'bold',
-                        marginLeft: wp(1),
-                      }}>
-                      {date.month}
-                    </Text>
-                    <Text
-                      style={{
-                        fontSize: wp(2),
-                        fontWeight: 'bold',
-                        marginLeft: wp(1),
-                      }}>
-                      {date.date}
-                    </Text>
+                    <Text style={style.txtStyle}>{date.month}</Text>
+                    <Text style={style.txtStyle}>{date.date}</Text>
                   </View>
                 </View>
 
@@ -113,41 +125,14 @@ const SelectTicketScreen = ({navigation, route}) => {
           </View>
           <View style={{marginTop: hp(3)}}>
             <Text>How Many Tickets</Text>
-            <View
-              style={{
-                flexDirection: 'row',
-                marginTop: hp(2),
-                justifyContent: 'space-between',
-              }}>
+            <View style={style.container6}>
               <TicketSelect
-                selectTicket={item => {
-                  setfullT({
-                    item: item.item,
-                    index: item.index,
-                  });
-                  if (halfT.item !== '') {
-                    let total = parseInt(item.item) + parseInt(fullT.item);
-                    settotal(total);
-                  } else {
-                    settotal(item.item);
-                  }
-                }}
-                selectedTicket={fullT} //selected ticket chai prop ho (comoponent le chinos vanera)
+                selectTicket={selectTicket1}
+                selectedTicket={fullT}
                 txt="Full Tickets"
               />
               <TicketSelect
-                selectTicket={item => {
-                  sethalfT({
-                    item: item.item,
-                    index: item.index,
-                  });
-                  if (fullT.item !== '') {
-                    let total = parseInt(item.item) + parseInt(fullT.item);
-                    settotal(total);
-                  } else {
-                    settotal(item.item);
-                  }
-                }}
+                selectTicket={selectTicket2}
                 selectedTicket={halfT}
                 txt="Half Tickets"
               />
@@ -155,15 +140,10 @@ const SelectTicketScreen = ({navigation, route}) => {
           </View>
           <View style={{marginTop: hp(3)}}>
             <Text>Select Seat Type</Text>
-            <View
-              style={{
-                flexDirection: 'row',
-                flexWrap: 'wrap',
-                justifyContent: 'space-between',
-              }}>
+            <View style={style.container7}>
               {selectSeat.map((item, index) => {
                 return (
-                  <TouchableOpacity key={index} onPress={() => settouch(index)}>
+                  <TouchableOpacity key={index} onPress={() => setTouch(index)}>
                     <View
                       style={[
                         style.container5,
@@ -263,5 +243,20 @@ const style = StyleSheet.create({
     marginTop: hp(2),
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  container6: {
+    flexDirection: 'row',
+    marginTop: hp(2),
+    justifyContent: 'space-between',
+  },
+  container7: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+  },
+  txtStyle: {
+    fontSize: wp(2),
+    fontWeight: 'bold',
+    marginLeft: wp(1),
   },
 });

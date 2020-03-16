@@ -15,12 +15,7 @@ const NextButton = ({txt}) => {
       </Text>
       <Image
         resizeMode="contain"
-        style={{
-          height: hp(5),
-          width: wp(5),
-          tintColor: allcolor.theme,
-          marginLeft: wp(5),
-        }}
+        style={(style.imgStyle, [{tintColor: allcolor.theme}])}
         source={allImage.rightarrow}
       />
     </View>
@@ -38,5 +33,11 @@ const style = StyleSheet.create({
     alignItems: 'center',
 
     flexDirection: 'row',
+  },
+  imgStyle: {
+    height: hp(5),
+    width: wp(5),
+
+    marginLeft: wp(5),
   },
 });

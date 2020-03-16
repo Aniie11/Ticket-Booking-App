@@ -9,7 +9,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import HeaderTop from '../../../components/Header/HeaderTop';
-import {allImage} from '../../../constants';
+import {allImage, globalStyle} from '../../../constants';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -22,22 +22,19 @@ const MovieDetailScreen = ({navigation, route}) => {
   const data = route.params.data;
   console.log(data.img, data.text);
 
-  const [display, setdisplay] = useState(false);
+  const [display, setDisplay] = useState(false);
   return (
     <View style={{flex: 1}}>
       <HeaderTop
         onpress={() => navigation.goBack(null)}
         text="EAP Movies"
-        leftIcon={allImage.leftarrow}
+        leftArrow={allImage.leftarrow}
       />
 
       <View style={{alignItems: 'center'}}>
         <Card>
           <View style={style.container}>
-            <Image
-              source={data.img}
-              style={{height: hp(28), width: wp(45), borderRadius: wp(3)}}
-            />
+            <Image source={data.img} style={style.imgStyle} />
 
             <Text style={{fontWeight: 'bold', marginTop: hp(1)}}>
               {data.text}
@@ -72,31 +69,12 @@ const MovieDetailScreen = ({navigation, route}) => {
           <Text>{data.Director}</Text>
         </View>
         <Text style={{fontWeight: 'bold'}}> Cast:</Text>
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-          }}>
+        <View style={{...globalStyle.itemInCenter}}>
           {data.cast.slice(0, 3).map((item, index) => {
             return (
-              <View
-                key={index}
-                style={{
-                  marginRight: wp(3),
-                  marginTop: hp(2),
-                  alignItems: 'center',
-
-                  height: hp(10),
-                }}>
+              <View key={index} style={style.container8}>
                 <View style={{height: hp(6)}}>
-                  <Image
-                    style={{
-                      height: wp(10),
-                      width: wp(10),
-                      borderRadius: wp(5),
-                    }}
-                    source={item.img}
-                  />
+                  <Image style={style.imgStyle1} source={item.img} />
                 </View>
                 <View style={{width: wp(20)}}>
                   <Text style={{fontSize: wp(3), textAlign: 'center'}}>
@@ -106,7 +84,7 @@ const MovieDetailScreen = ({navigation, route}) => {
               </View>
             );
           })}
-          <TouchableOpacity onPress={() => setdisplay(true)}>
+          <TouchableOpacity onPress={() => setDisplay(true)}>
             <View style={style.container5}>
               <Image
                 resizeMode="contain"
@@ -125,7 +103,7 @@ const MovieDetailScreen = ({navigation, route}) => {
         visible={display}
         transparent={true}
         onRequestClose={() => {
-          setdisplay(false);
+          setDisplay(false);
         }}>
         <View style={style.container6}>
           <View style={style.container7}>
@@ -138,29 +116,11 @@ const MovieDetailScreen = ({navigation, route}) => {
               All Cast
             </Text>
             <ScrollView>
-              <View
-                style={{
-                  flexDirection: 'row',
-                  flexWrap: 'wrap',
-                  paddingHorizontal: wp(5),
-                }}>
+              <View style={style.container9}>
                 {data.cast.map((item, index) => {
                   return (
-                    <View
-                      style={{
-                        marginTop: hp(3),
-
-                        width: wp(80) / 3,
-                        alignItems: 'center',
-                      }}>
-                      <Image
-                        style={{
-                          height: wp(20),
-                          width: wp(20),
-                          borderRadius: wp(10),
-                        }}
-                        source={item.img}
-                      />
+                    <View style={style.container10}>
+                      <Image style={style.imgStyle2} source={item.img} />
                       <View style={{width: wp(20)}}>
                         <Text style={{textAlign: 'center'}}>{item.name}</Text>
                       </View>
@@ -244,5 +204,38 @@ const style = StyleSheet.create({
     backgroundColor: 'white',
     width: wp(90),
     borderRadius: wp(3),
+  },
+  container8: {
+    marginRight: wp(3),
+    marginTop: hp(2),
+    alignItems: 'center',
+
+    height: hp(10),
+  },
+  container9: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    paddingHorizontal: wp(5),
+  },
+  container10: {
+    marginTop: hp(3),
+
+    width: wp(80) / 3,
+    alignItems: 'center',
+  },
+  imgStyle: {
+    height: hp(28),
+    width: wp(45),
+    borderRadius: wp(3),
+  },
+  imgStyle1: {
+    height: wp(10),
+    width: wp(10),
+    borderRadius: wp(5),
+  },
+  imgStyle2: {
+    height: wp(20),
+    width: wp(20),
+    borderRadius: wp(10),
   },
 });

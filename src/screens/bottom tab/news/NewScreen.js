@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text, Image, ScrollView, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  ScrollView,
+  TouchableOpacity,
+  StyleSheet,
+} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -222,31 +229,18 @@ const Movies = [
 const NewScreen = ({navigation, route}) => {
   return (
     <View style={{flex: 1}}>
-      <HeaderTop text="EAP Movies" rightIcon={allImage.user} />
+      <HeaderTop text="EAP Movies" rightArrow={allImage.user} />
       <ScrollView contentContainerStyle={{paddingBottom: hp(10)}}>
-        <View style={{paddingHorizontal: wp(0)}}>
+        <View>
           {Movies.map((item, index) => {
             return (
               <Card>
                 <View
                   key={index}
                   style={{height: hp(30), flexDirection: 'row'}}>
-                  <Image
-                    style={{
-                      height: hp(30),
-                      width: wp(35),
-                      borderTopLeftRadius: wp(4),
-                      borderBottomLeftRadius: wp(4),
-                    }}
-                    source={item.img}
-                  />
+                  <Image style={style.imageStyle} source={item.img} />
 
-                  <View
-                    style={{
-                      flexShrink: 1,
-                      paddingHorizontal: wp(2),
-                      marginTop: hp(2),
-                    }}>
+                  <View style={style.container}>
                     <Text style={{fontSize: wp(4), fontWeight: 'bold'}}>
                       {item.txt}
                     </Text>
@@ -256,13 +250,7 @@ const NewScreen = ({navigation, route}) => {
                       style={{fontSize: wp(3), textAlign: 'justify'}}>
                       {item.txt1}
                     </Text>
-                    <View
-                      style={{
-                        justifyContent: 'flex-end',
-                        flex: 1,
-                        marginBottom: hp(2),
-                        alignItems: 'flex-end',
-                      }}>
+                    <View style={style.container1}>
                       <TouchableOpacity
                         onPress={() =>
                           navigation.navigate('NewsReviewScreen', {
@@ -284,3 +272,22 @@ const NewScreen = ({navigation, route}) => {
 };
 
 export default NewScreen;
+const style = StyleSheet.create({
+  imageStyle: {
+    height: hp(30),
+    width: wp(35),
+    borderTopLeftRadius: wp(4),
+    borderBottomLeftRadius: wp(4),
+  },
+  container: {
+    flexShrink: 1,
+    paddingHorizontal: wp(2),
+    marginTop: hp(2),
+  },
+  container1: {
+    justifyContent: 'flex-end',
+    flex: 1,
+    marginBottom: hp(2),
+    alignItems: 'flex-end',
+  },
+});

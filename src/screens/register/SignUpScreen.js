@@ -16,12 +16,12 @@ import {
   MenuTrigger,
 } from 'react-native-popup-menu';
 const SignUpScreen = ({navigation}) => {
-  const [numberType, setnumberType] = useState('+977');
-  const [firstname, setfirstname] = useState();
+  const [numberType, setNumberType] = useState('+977');
+  const [firstName, setFirstName] = useState();
   const [Email, setEmail] = useState();
-  const [lastname, setlastname] = useState();
+  const [lastName, setLastName] = useState();
 
-  const [pw, setpw] = useState();
+  const [pw, setPw] = useState();
   return (
     // <MenuProvider>
     <View style={{flex: 1}}>
@@ -31,13 +31,13 @@ const SignUpScreen = ({navigation}) => {
         <View style={{padding: wp(5)}}>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
             <InputText
-              onChangeUpdateText={val => setfirstname(val)}
+              onChangeUpdateText={val => setFirstName(val)}
               text="First name"
               text1="Enter FirstName"
               txtInputOverride={{width: wp(38)}}
             />
             <InputText
-              onChangeUpdateText={val => setlastname(val)}
+              onChangeUpdateText={val => setLastName(val)}
               text="Last name"
               text1="Enter LastName"
               txtInputOverride={{width: wp(38)}}
@@ -62,13 +62,13 @@ const SignUpScreen = ({navigation}) => {
                 </View>
               </MenuTrigger>
               <MenuOptions>
-                <MenuOption onSelect={() => setnumberType('+977')}>
+                <MenuOption onSelect={() => setNumberType('+977')}>
                   <Text style={{color: 'black'}}>+977</Text>
                 </MenuOption>
-                <MenuOption onSelect={() => setnumberType('+022')}>
+                <MenuOption onSelect={() => setNumberType('+022')}>
                   <Text style={{color: 'black'}}>+022</Text>
                 </MenuOption>
-                <MenuOption onSelect={() => setnumberType('+113')}>
+                <MenuOption onSelect={() => setNumberType('+113')}>
                   <Text style={{color: 'black'}}>+113</Text>
                 </MenuOption>
               </MenuOptions>
@@ -81,7 +81,7 @@ const SignUpScreen = ({navigation}) => {
             text1="Enter email address"
           />
           <InputText
-            onChangeUpdateText={val => setpw(val)}
+            onChangeUpdateText={val => setPw(val)}
             text="Password"
             text1="Enter password"
           />
@@ -90,14 +90,7 @@ const SignUpScreen = ({navigation}) => {
           </TouchableOpacity>
         </View>
       </Card>
-      <View
-        style={{
-          flex: 1,
-          alignItems: 'flex-end',
-          flexDirection: 'row',
-          justifyContent: 'center',
-          marginBottom: hp(8),
-        }}>
+      <View style={style.container1}>
         <Text style={{color: allcolor.textColor}}>
           Already have an account?
         </Text>
@@ -121,6 +114,13 @@ const style = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
     flexDirection: 'row',
+  },
+  container1: {
+    flex: 1,
+    alignItems: 'flex-end',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginBottom: hp(8),
   },
 });
 

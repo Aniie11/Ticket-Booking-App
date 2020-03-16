@@ -9,9 +9,10 @@ import HeaderTop from '../../../components/Header/HeaderTop';
 import {allImage, allcolor} from '../../../constants';
 
 import NextButton from '../../../components/Button/NextButton';
+import moment from 'moment';
 
 const date = [
-  {month: 'MAR', date: '09', day: 'FRIDAY'},
+  {month: 'MAR', date: '08', day: 'FRIDAY'},
   {month: 'MAR', date: '09', day: 'FRIDAY'},
   {month: 'MAR', date: '10', day: 'SATURDAY'},
   {month: 'MAR', date: '11', day: 'SUNDAY'},
@@ -31,23 +32,26 @@ const time = ['10:30 AM', '1:30 AM', '4:15 PM', '7:00 PM', '10:00 PM'];
 const TicketBookingScreen = ({navigation, route}) => {
   const data = route.params.data;
 
-  const [touchable, settouchable] = useState({
+  const [touchable, setTouchable] = useState({
     month: '',
     date: '',
     day: '',
     index: '',
   });
-  const [touch, settouch] = useState({
+  const [touch, setTouch] = useState({
     selectedTime: '',
     index: '',
   });
+
+  const [month, setMonth] = useState(moment(new Date()).format('MMMM DD YYYY'));
+  const [showTime, setShowTime] = useState(moment(new Date()).format('LT'));
 
   return (
     <View style={{flex: 1, paddingHorizontal: wp(4)}}>
       <HeaderTop
         onpress={() => navigation.goBack(null)}
         text="Buy Tickets"
-        leftIcon={allImage.leftarrow}
+        leftArrow={allImage.leftarrow}
       />
 
       <View style={style.container}>
@@ -61,18 +65,23 @@ const TicketBookingScreen = ({navigation, route}) => {
                 style={{
                   flexDirection: 'row',
                 }}>
-                <Text style={{fontSize: wp(3)}}>{touchable.day}</Text>
-                <Text style={{fontSize: wp(3), marginLeft: wp(1)}}>
+                <Text style={{fontSize: wp(3), fontWeight: 'bold'}}>
+                  {touchable.day}
+                </Text>
+
+                <Text style={style.txtStyle}>
+                  {month}
                   {touchable.month}
                 </Text>
-                <Text style={{fontSize: wp(3), marginLeft: wp(1)}}>
-                  {touchable.date}
-                </Text>
+
+                <Text style={style.txtStyle}>{touchable.date}</Text>
               </View>
             </View>
 
             <View style={style.container2}>
-              <Text style={{fontSize: wp(3)}}>{touch.selectedTime} </Text>
+              <Text style={{fontSize: wp(3), fontWeight: 'bold'}}>
+                {showTime} {touch.selectedTime}
+              </Text>
             </View>
           </View>
         </View>
@@ -91,14 +100,15 @@ const TicketBookingScreen = ({navigation, route}) => {
             return (
               <TouchableOpacity
                 key={index}
-                onPress={() =>
-                  settouchable({
+                onPress={() => {
+                  setMonth(false);
+                  setTouchable({
                     month: item.month,
                     date: item.date,
                     day: item.day,
                     index: index,
-                  })
-                }>
+                  });
+                }}>
                 <View
                   style={[
                     style.container3,
@@ -143,12 +153,13 @@ const TicketBookingScreen = ({navigation, route}) => {
             return (
               <TouchableOpacity
                 key={index}
-                onPress={() =>
-                  settouch({
+                onPress={() => {
+                  setShowTime(false);
+                  setTouch({
                     selectedTime: item,
                     index: index,
-                  })
-                }>
+                  });
+                }}>
                 <View
                   style={[
                     style.container4,
@@ -247,5 +258,10 @@ const style = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-end',
     marginBottom: hp(5),
+  },
+  txtStyle: {
+    fontSize: wp(3),
+    marginLeft: wp(1),
+    fontWeight: 'bold',
   },
 });

@@ -53,7 +53,7 @@ const Movie = [
 const UpComingScreen = ({navigation}) => {
   return (
     <View style={{flex: 1}}>
-      <HeaderTop text="EAP Movies" rightIcon={allImage.user} />
+      <HeaderTop text="EAP Movies" rightArrow={allImage.user} />
       <ScrollView contentContainerStyle={{paddingBottom: hp(5)}}>
         <View style={style.container}>
           {Movie.map((item, index) => {

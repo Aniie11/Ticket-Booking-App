@@ -1,12 +1,11 @@
-import React, {useState} from 'react';
-import {View, Text, Image, ScrollView, TouchableOpacity} from 'react-native';
+import React from 'react';
+import {View, Text, Image, ScrollView, StyleSheet} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import HeaderTop from '../../../components/Header/HeaderTop';
-import {allcolor, allImage} from '../../../constants';
-import NextButton from '../../../components/Button/NextButton';
+import {allImage, globalStyle} from '../../../constants';
 
 const NewsReviewScreen = ({navigation, route}) => {
   const data = route.params.data;
@@ -16,15 +15,14 @@ const NewsReviewScreen = ({navigation, route}) => {
       <HeaderTop
         onpress={() => navigation.goBack(null)}
         text="News Review Screen"
-        leftIcon={allImage.leftarrow}
+        leftArrow={allImage.leftarrow}
       />
       <ScrollView contentContainerStyle={{paddingBottom: hp(10)}}>
         <View style={{marginTop: hp(4)}}>
           <View
             style={{
               height: hp(35),
-              justifyContent: 'center',
-              alignItems: 'center',
+              ...globalStyle.makeInCenter,
             }}>
             <Image
               style={{
@@ -55,32 +53,14 @@ const NewsReviewScreen = ({navigation, route}) => {
           </Text>
           <View
             style={{
-              flexDirection: 'row',
-              alignItems: 'center',
+              ...globalStyle.itemInCenter,
               flexWrap: 'wrap',
             }}>
             {data.cast.map((item, index) => {
               return (
-                <View
-                  key={index}
-                  style={{
-                    marginRight: wp(3),
-                    marginTop: hp(5),
-                    alignItems: 'center',
-
-                    height: hp(10),
-
-                    width: wp(90) / 5,
-                  }}>
+                <View key={index} style={style.container}>
                   <View style={{height: hp(6)}}>
-                    <Image
-                      style={{
-                        height: wp(15),
-                        width: wp(15),
-                        borderRadius: wp(15),
-                      }}
-                      source={item.img}
-                    />
+                    <Image style={style.imageStyle} source={item.img} />
                   </View>
                   <View style={{width: wp(20), marginTop: hp(2)}}>
                     <Text style={{fontSize: wp(3), textAlign: 'center'}}>
@@ -98,3 +78,20 @@ const NewsReviewScreen = ({navigation, route}) => {
 };
 
 export default NewsReviewScreen;
+
+const style = StyleSheet.create({
+  container: {
+    marginRight: wp(3),
+    marginTop: hp(5),
+    alignItems: 'center',
+
+    height: hp(10),
+
+    width: wp(90) / 5,
+  },
+  imageStyle: {
+    height: wp(15),
+    width: wp(15),
+    borderRadius: wp(15),
+  },
+});

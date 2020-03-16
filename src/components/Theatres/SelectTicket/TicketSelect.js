@@ -26,9 +26,7 @@ const datas = [
 const TicketSelect = ({txt, selectedTicket, selectTicket}) => {
   return (
     <View style={[style.container, {borderColor: allcolor.bordercolor}]}>
-      <Text style={{fontWeight: 'bold', textAlign: 'center', fontSize: wp(4)}}>
-        {txt}
-      </Text>
+      <Text style={style.txtStyle}>{txt}</Text>
       <View style={style.container1}>
         {datas.map((item, index) => {
           return (
@@ -86,4 +84,5 @@ const style = StyleSheet.create({
 
     borderRadius: wp(2),
   },
+  txtStyle: {fontWeight: 'bold', textAlign: 'center', fontSize: wp(4)},
 });

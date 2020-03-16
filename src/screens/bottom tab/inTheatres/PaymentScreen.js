@@ -23,56 +23,54 @@ const PaymentScreen = ({navigation, route}) => {
   const time = route.params.time;
   const theatre = route.params.theatre;
   const total = route.params.total;
-  const [touch, settouch] = useState();
-  const [touchable, settouchable] = useState();
-  const [display, setdisplay] = useState();
-  const [display1, setdisplay1] = useState();
-  const [firstname, setfirstname] = useState();
-  const [number, setnumber] = useState();
-  const [email, setemail] = useState();
-  const [lastname, setlastname] = useState();
-  const [username, setusername] = useState();
+  const [touch, setTouch] = useState();
+  const [touchable, setTouchable] = useState();
+  const [display, setDisplay] = useState();
+  const [display1, setDisplay1] = useState();
+  const [firstName, setfirstName] = useState();
+  const [number, setNumber] = useState();
+  const [email, setEmail] = useState();
+  const [lastName, setlastName] = useState();
 
   return (
     <View style={{flex: 1}}>
       <HeaderTop
         onpress={() => navigation.goBack(null)}
         text="Confirm & Pay"
-        leftIcon={allImage.leftarrow}
+        leftArrow={allImage.leftarrow}
       />
       <ScrollView contentContainerStyle={{paddingBottom: hp(10)}}>
-        <Card styleOverride={{marginTop: hp(0)}}>
+        <Card>
           <View style={style.container} />
           <View style={style.container1} />
           <View style={{paddingHorizontal: wp(4)}}>
-            <View
-              style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <View style={{...globalStyle.rowSpace}}>
               <InputText
-                onChangeUpdateText={val => setfirstname(val)}
+                onChangeUpdateText={val => setfirstName(val)}
                 text="First Name"
                 text1="Enter First Name"
                 txtInputOverride={{width: wp(38)}}
               />
               <InputText
-                onChangeUpdateText={val => setlastname(val)}
+                onChangeUpdateText={val => setlastName(val)}
                 text="Last Name"
                 text1="Enter First Name"
                 txtInputOverride={{width: wp(38)}}
               />
             </View>
             <InputText
-              onChangeUpdateText={val => setnumber(val)}
+              onChangeUpdateText={val => setNumber(val)}
               text="Mobile"
               text1="Enter Mobile Number"
             />
             <InputText
-              onChangeUpdateText={val => setemail(val)}
+              onChangeUpdateText={val => setEmail(val)}
               text="Email"
               text1="abc@gmail.com"
             />
 
             <View style={style.container2}>
-              <TouchableOpacity onPress={() => setdisplay(!display)}>
+              <TouchableOpacity onPress={() => setDisplay(!display)}>
                 <View
                   style={[
                     style.container3,
@@ -87,11 +85,7 @@ const PaymentScreen = ({navigation, route}) => {
                     <View>
                       <Image
                         resizeMode="center"
-                        style={{
-                          height: hp(3),
-                          width: wp(3),
-                          tintColor: 'white',
-                        }}
+                        style={style.imgStyle1}
                         source={allImage.tick}
                       />
                     </View>
@@ -145,44 +139,22 @@ const PaymentScreen = ({navigation, route}) => {
                         style={{
                           ...globalStyle.itemInCenter,
                         }}>
-                        <Text style={{fontSize: wp(2), fontWeight: 'bold'}}>
-                          {date.day}
-                        </Text>
-                        <Text
-                          style={{
-                            fontSize: wp(2),
-                            fontWeight: 'bold',
-                            marginLeft: wp(1),
-                          }}>
-                          {date.month}
-                        </Text>
-                        <Text
-                          style={{
-                            fontSize: wp(2),
-                            fontWeight: 'bold',
-                            marginLeft: wp(1),
-                          }}>
-                          {date.date}
-                        </Text>
+                        <Text style={style.txtStyle1}>{date.day}</Text>
+                        <Text style={style.txtStyle}>{date.month}</Text>
+                        <Text style={style.txtStyle}>{date.date}</Text>
                       </View>
                     </View>
 
                     <View style={style.container6}>
-                      <Text style={{fontWeight: 'bold', fontSize: wp(2)}}>
-                        {time}
-                      </Text>
+                      <Text style={style.txtStyle1}>{time}</Text>
                     </View>
                   </View>
                   <View style={{flexDirection: 'row', marginTop: hp(1)}}>
                     <View style={style.container7}>
-                      <Text style={{fontWeight: 'bold', fontSize: wp(2)}}>
-                        {theatre.txt}
-                      </Text>
+                      <Text style={style.txtStyle1}>{theatre.txt}</Text>
                     </View>
                     <View style={style.container8}>
-                      <Text style={{fontSize: wp(2), fontWeight: 'bold'}}>
-                        {total} Tickets
-                      </Text>
+                      <Text style={style.txtStyle1}>{total} Tickets</Text>
                     </View>
                   </View>
                 </View>
@@ -193,8 +165,7 @@ const PaymentScreen = ({navigation, route}) => {
                   Rs.4050.00
                 </Text>
               </View>
-              <View
-                style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+              <View style={{...globalStyle.rowSpace}}>
                 {[...new Array(40)].map(() => {
                   return (
                     <View>
@@ -211,7 +182,7 @@ const PaymentScreen = ({navigation, route}) => {
               </View>
             </View>
             <View style={style.container10}>
-              <TouchableOpacity onPress={() => setdisplay1(!display1)}>
+              <TouchableOpacity onPress={() => setDisplay1(!display1)}>
                 <View
                   style={[
                     style.container11,
@@ -223,7 +194,7 @@ const PaymentScreen = ({navigation, route}) => {
                   {display1 === true ? (
                     <Image
                       resizeMode="center"
-                      style={{height: hp(5), width: wp(5), tintColor: 'white'}}
+                      style={style.imgStyle2}
                       source={allImage.tick}
                     />
                   ) : null}
@@ -234,19 +205,19 @@ const PaymentScreen = ({navigation, route}) => {
               </Text>
               <Image
                 resizeMode="contain"
-                style={{height: hp(7), width: wp(7), borderRadius: wp(2)}}
+                style={style.imgStyle}
                 source={allImage.visa}
               />
               <Image
                 resizeMode="contain"
-                style={{height: hp(7), width: wp(7), borderRadius: wp(2)}}
+                style={style.imgStyle}
                 source={allImage.mastercard}
               />
             </View>
           </View>
         </Card>
         <View style={{alignItems: 'center', marginTop: hp(2)}}>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <View style={{...globalStyle.itemInCenter}}>
             <Text style={{fontSize: wp(3)}}>You have</Text>
             <Text
               style={{
@@ -264,7 +235,7 @@ const PaymentScreen = ({navigation, route}) => {
         <View style={style.container12}>
           <TouchableOpacity
             onPress={() => {
-              settouch(!touch);
+              setTouch(!touch);
               navigation.goBack(null);
             }}>
             <View
@@ -278,7 +249,7 @@ const PaymentScreen = ({navigation, route}) => {
               <Text style={{color: touch ? 'white' : null}}>Back</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => settouchable(!touchable)}>
+          <TouchableOpacity onPress={() => setTouchable(!touchable)}>
             <View
               style={[
                 style.container14,
@@ -414,4 +385,24 @@ const style = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  txtStyle: {
+    fontSize: wp(2),
+    fontWeight: 'bold',
+    marginLeft: wp(1),
+  },
+  txtStyle1: {
+    fontSize: wp(2),
+    fontWeight: 'bold',
+  },
+  imgStyle: {
+    height: hp(7),
+    width: wp(7),
+    borderRadius: wp(2),
+  },
+  imgStyle1: {
+    height: hp(3),
+    width: wp(3),
+    tintColor: 'white',
+  },
+  imgStyle2: {height: hp(5), width: wp(5), tintColor: 'white'},
 });

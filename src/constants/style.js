@@ -1,4 +1,5 @@
 export default {
-  itemInCenter: {alignItem: 'center', flexDirection: 'row'},
-  makeInCenter: {alignItem: 'center', justifyContent: 'center'},
+  itemInCenter: {alignItems: 'center', flexDirection: 'row'},
+  makeInCenter: {alignItems: 'center', justifyContent: 'center'},
+  rowSpace: {flexDirection: 'row', justifyContent: 'space-between'},
 };
