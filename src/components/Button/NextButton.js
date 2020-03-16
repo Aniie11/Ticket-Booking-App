@@ -15,7 +15,7 @@ const NextButton = ({txt}) => {
       </Text>
       <Image
         resizeMode="contain"
-        style={(style.imgStyle, [{tintColor: allcolor.theme}])}
+        style={[style.imgStyle, {tintColor: allcolor.theme}]}
         source={allImage.rightarrow}
       />
     </View>
