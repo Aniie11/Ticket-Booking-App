@@ -1,5 +1,5 @@
 //Welcome Screen
-import LOGO from '../resource/LOGO.png';
+import LOGO from '../resource/HomeScreen/LOGO.png';
 //HomeScreen
 import deadpool from '../resource/deadpool.jpg';
 import incredible from '../resource/incredible.jpg';
@@ -16,6 +16,7 @@ import aquaman from '../resource/aquaman.jpg';
 import blackpanther from '../resource/blackpanther.jpg';
 import avengers from '../resource/avengers.jpg';
 import wrinkeintime from '../resource/wrinkleintime.jpg';
+import rampage from '../resource/rampage.jpg';
 //theatreScreen
 import hall from '../resource/hall.jpeg';
 import hall1 from '../resource/hall1.jpg';
@@ -37,9 +38,6 @@ import leftarrow from '../resource/leftarrow.png';
 //Setting Screen
 import rightarrow1 from '../resource/rightarrow1.png';
 
-import joker from '../resource/joker.jpg';
-
-import rampage from '../resource/rampage.jpg';
 //moviedetailScreen
 import alexandre from '../resource/alexandre.jpg';
 import alicia from '../resource/alicia.jpg';
@@ -83,7 +81,7 @@ export default {
   rightarrow1,
   blackpanther,
   aquaman,
-  joker,
+
   justiceleague,
   incredible,
   rampage,
