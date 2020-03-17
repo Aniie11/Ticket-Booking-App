@@ -13,7 +13,7 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import HeaderTop from '../../../components/Header/HeaderTop';
-import {allImage, allcolor, globalStyle} from '../../../constants';
+import {allImage, allColor, globalStyle} from '../../../constants';
 import Card from '../../../components/Card/Card';
 import InputText from '../../../components/InputText/InputText';
 
@@ -76,9 +76,9 @@ const PaymentScreen = ({navigation, route}) => {
                     style.container3,
                     {
                       backgroundColor: display
-                        ? allcolor.CircleColor
+                        ? allColor.circleColor
                         : 'transparent',
-                      borderColor: allcolor.CircleColor,
+                      borderColor: allColor.circleColor,
                     },
                   ]}>
                   {display === true ? (
@@ -108,7 +108,7 @@ const PaymentScreen = ({navigation, route}) => {
                   <View>
                     <Text
                       style={{
-                        color: allcolor.bordercolor,
+                        color: allColor.borderColor,
                         marginRight: wp(1),
                       }}>
                       -
@@ -171,7 +171,7 @@ const PaymentScreen = ({navigation, route}) => {
                     <View>
                       <Text
                         style={{
-                          color: allcolor.bordercolor,
+                          color: allColor.borderColor,
                           marginRight: wp(1),
                         }}>
                         -
@@ -187,7 +187,7 @@ const PaymentScreen = ({navigation, route}) => {
                   style={[
                     style.container11,
                     {
-                      borderColor: allcolor.CircleColor,
+                      borderColor: allColor.circleColor,
                       backgroundColor: display1 ? '#00DE51' : 'transparent',
                     },
                   ]}>
@@ -223,7 +223,7 @@ const PaymentScreen = ({navigation, route}) => {
               style={{
                 fontSize: wp(3),
                 fontWeight: 'bold',
-                color: allcolor.theme,
+                color: allColor.theme,
               }}>
               300
             </Text>
@@ -242,8 +242,8 @@ const PaymentScreen = ({navigation, route}) => {
               style={[
                 style.container13,
                 {
-                  backgroundColor: touch ? allcolor.theme : null,
-                  borderColor: allcolor.bordercolor,
+                  backgroundColor: touch ? allColor.theme : null,
+                  borderColor: allColor.borderColor,
                 },
               ]}>
               <Text style={{color: touch ? 'white' : null}}>Back</Text>
@@ -254,8 +254,8 @@ const PaymentScreen = ({navigation, route}) => {
               style={[
                 style.container14,
                 {
-                  backgroundColor: touchable ? allcolor.theme : null,
-                  borderColor: allcolor.bordercolor,
+                  backgroundColor: touchable ? allColor.theme : null,
+                  borderColor: allColor.borderColor,
                 },
               ]}>
               <Text style={{color: touchable ? 'white' : null}}>Pay Now</Text>

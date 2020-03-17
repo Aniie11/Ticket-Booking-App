@@ -4,6 +4,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import {globalStyle} from '../../constants';
 
 const Card = ({children, styleOverride}) => {
   return (
@@ -12,10 +13,10 @@ const Card = ({children, styleOverride}) => {
         style.container,
         {
           ...styleOverride,
+          ...globalStyle.shadow,
         },
       ]}>
       {children}
-      {/* card component le j j wrap garya xa tyo sap children ma baseko hunxa   */}
     </View>
   );
 };
@@ -23,7 +24,6 @@ const Card = ({children, styleOverride}) => {
 export default Card;
 const style = StyleSheet.create({
   container: {
-    elevation: 5,
     backgroundColor: 'white',
     marginHorizontal: wp(4),
     borderRadius: wp(4),

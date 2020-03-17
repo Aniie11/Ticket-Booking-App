@@ -6,7 +6,7 @@ import {
 } from 'react-native-responsive-screen';
 import HeaderTop from '../../../components/Header/HeaderTop';
 import NextButton from '../../../components/Button/NextButton';
-import {allcolor, allImage, globalStyle} from '../../../constants';
+import {allColor, allImage, globalStyle} from '../../../constants';
 
 const ticketArr = [
   'G1',
@@ -192,11 +192,11 @@ const SelectSeatScreen = ({navigation, route}) => {
                         marginRight: spaceArr.includes(index) ? wp(4) : wp(1),
                         marginBottom: hp(1),
                         backgroundColor: selectedSeat.includes(index)
-                          ? allcolor.theme
+                          ? allColor.theme
                           : preselectIndex.includes(index)
-                          ? allcolor.theme
+                          ? allColor.theme
                           : 'transparent',
-                        borderColor: allcolor.bordercolor,
+                        borderColor: allColor.borderColor,
                       },
                     ]}>
                     <Text
@@ -234,7 +234,7 @@ const SelectSeatScreen = ({navigation, route}) => {
 
       {/* .......................................................*/}
       <View style={{alignItems: 'center', marginTop: hp(5)}}>
-        <View style={[style.container5, {borderColor: allcolor.bordercolor}]}>
+        <View style={[style.container5, {borderColor: allColor.borderColor}]}>
           <Text style={{fontWeight: 'bold', fontSize: wp(5)}}>RS.4050.00</Text>
           <Text style={{fontWeight: 'bold', fontSize: wp(3)}}>
             Total Amount Payable

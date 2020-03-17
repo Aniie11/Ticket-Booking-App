@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import {allcolor} from '../../constants/';
+import {allColor} from '../../constants/';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -12,7 +12,7 @@ const Button = ({text, txtOverride, txt1override}) => {
       style={[
         style.container,
         {
-          backgroundColor: allcolor.theme,
+          backgroundColor: allColor.theme,
 
           ...txtOverride,
         },

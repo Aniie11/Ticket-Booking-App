@@ -42,8 +42,8 @@ const MovieDetailScreen = ({navigation, route}) => {
           </View>
         </Card>
 
-        <View style={style.container1} />
-        <View style={style.container2} />
+        <View style={[style.container1, {...globalStyle.shadow1}]} />
+        <View style={[style.container2, {...globalStyle.shadow1}]} />
         <View style={style.container3} />
         <View style={style.container4} />
 
@@ -154,7 +154,6 @@ const style = StyleSheet.create({
     left: wp(18),
     borderRadius: wp(4),
     marginTop: hp(5),
-    elevation: 1,
   },
   container2: {
     position: 'absolute',
@@ -164,7 +163,6 @@ const style = StyleSheet.create({
     right: wp(18),
     borderRadius: wp(4),
     marginTop: hp(5),
-    elevation: 1,
   },
   container3: {
     position: 'absolute',

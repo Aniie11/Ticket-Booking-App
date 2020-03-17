@@ -6,7 +6,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {allcolor} from '../../constants';
+import {allColor} from '../../constants';
 import HeaderTop from '../../components/Header/HeaderTop';
 import Card from '../../components/Card/Card';
 import {
@@ -20,6 +20,7 @@ const SignUpScreen = ({navigation}) => {
   const [firstName, setFirstName] = useState();
   const [Email, setEmail] = useState();
   const [lastName, setLastName] = useState();
+  const [username, setUsername] = useState();
 
   const [pw, setPw] = useState();
   return (
@@ -31,30 +32,38 @@ const SignUpScreen = ({navigation}) => {
         <View style={{padding: wp(5)}}>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
             <InputText
-              onChangeUpdateText={val => setFirstName(val)}
+              onChangeText={val => setFirstName(val)}
               text="First name"
-              text1="Enter FirstName"
+              placeholder="Enter FirstName"
               txtInputOverride={{width: wp(38)}}
             />
             <InputText
-              onChangeUpdateText={val => setLastName(val)}
+              onChangeText={val => setLastName(val)}
               text="Last name"
-              text1="Enter LastName"
+              placeholder="Enter LastName"
               txtInputOverride={{width: wp(38)}}
             />
           </View>
-          <InputText text="Username" text1="Enter Username" />
+          <InputText
+            onChangeText={val => setUsername(val)}
+            text="Username"
+            placeholder="Enter Username"
+          />
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <Menu>
               <MenuTrigger>
-                <View style={style.container}>
+                <View
+                  style={[
+                    style.container,
+                    {borderColor: allColor.borderColor},
+                  ]}>
                   <Text>{numberType}</Text>
                   <Image
                     resizeMode="contain"
                     style={{
                       height: hp(3),
                       width: wp(3),
-                      tintColor: allcolor.bordercolor,
+                      tintColor: allColor.borderColor,
                       marginRight: wp(1),
                     }}
                     source={require('../../resource/downarrow.png')}
@@ -76,14 +85,14 @@ const SignUpScreen = ({navigation}) => {
             <InputText text="Mobile number" />
           </View>
           <InputText
-            onChangeUpdateText={val => setEmail(val)}
+            onChangeText={val => setEmail(val)}
             text="Email"
-            text1="Enter email address"
+            placeholder="Enter email address"
           />
           <InputText
-            onChangeUpdateText={val => setPw(val)}
+            onChangeText={val => setPw(val)}
             text="Password"
-            text1="Enter password"
+            placeholder="Enter password"
           />
           <TouchableOpacity>
             <Button text="Sign Up" />
@@ -91,11 +100,11 @@ const SignUpScreen = ({navigation}) => {
         </View>
       </Card>
       <View style={style.container1}>
-        <Text style={{color: allcolor.textColor}}>
+        <Text style={{color: allColor.textColor}}>
           Already have an account?
         </Text>
         <TouchableOpacity onPress={() => navigation.navigate('SignInScreen')}>
-          <Text style={{color: allcolor.theme, marginLeft: wp(3)}}>Signin</Text>
+          <Text style={{color: allColor.theme, marginLeft: wp(3)}}>Signin</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -106,7 +115,7 @@ const style = StyleSheet.create({
   container: {
     height: hp(6),
     width: wp(20),
-    borderColor: allcolor.bordercolor,
+
     borderWidth: 1,
     borderRadius: wp(2),
     marginTop: hp(5),

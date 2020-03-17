@@ -6,7 +6,7 @@ import {
 } from 'react-native-responsive-screen';
 
 import HeaderTop from '../../../components/Header/HeaderTop';
-import {allImage, allcolor} from '../../../constants';
+import {allImage, allColor} from '../../../constants';
 
 import NextButton from '../../../components/Button/NextButton';
 import moment from 'moment';
@@ -115,7 +115,7 @@ const TicketBookingScreen = ({navigation, route}) => {
                     {
                       backgroundColor:
                         index === touchable.index
-                          ? allcolor.theme
+                          ? allColor.theme
                           : 'transparent',
                     },
                   ]}>
@@ -165,7 +165,7 @@ const TicketBookingScreen = ({navigation, route}) => {
                     style.container4,
                     {
                       backgroundColor:
-                        index === touch.index ? allcolor.theme : 'transparent',
+                        index === touch.index ? allColor.theme : 'transparent',
                     },
                   ]}>
                   <Text

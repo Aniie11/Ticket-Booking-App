@@ -6,7 +6,7 @@ import {
 } from 'react-native-responsive-screen';
 import InputText from '../../components/InputText/InputText';
 import Button from '../../components/Button/Button';
-import {allcolor} from '../../constants';
+import {allColor} from '../../constants';
 import Card from '../../components/Card/Card';
 import HeaderTop from '../../components/Header/HeaderTop';
 
@@ -33,10 +33,10 @@ const SignInScreen = ({navigation}) => {
       <Card>
         <View style={{padding: wp(5)}}>
           <InputText
-            onChangeUpdateText={val => setName(val)}
-            textValue={name}
+            onChangeText={val => setName(val)}
+            value={name}
             text="Username"
-            text1="Enter Your Username"
+            placeholder="Enter Your Username"
           />
           <View style={style.container1}>
             <TouchableOpacity onPress={() => setVisible(!visible)}>
@@ -56,16 +56,16 @@ const SignInScreen = ({navigation}) => {
           </View>
 
           <InputText
-            onChangeUpdateText={val => setPw(val)} //
-            textValue={pw}
+            onChangeText={val => setPw(val)} //
+            value={pw}
             text="Password"
-            text1="Enter Password"
-            Visibility={visible}
+            placeholder="Enter Password"
+            secureTextEntry={visible}
           />
 
           <View style={{alignItems: 'flex-end', marginTop: hp(3)}}>
             <TouchableOpacity onPress={() => alert('Remember your password')}>
-              <Text style={{color: allcolor.textColor}}>Forgot Password?</Text>
+              <Text style={{color: allColor.textColor}}>Forgot Password?</Text>
             </TouchableOpacity>
           </View>
           <TouchableOpacity onPress={LOGIN}>
@@ -77,7 +77,7 @@ const SignInScreen = ({navigation}) => {
       <View style={style.container}>
         <Text>Don't have an account?</Text>
         <TouchableOpacity onPress={() => navigation.navigate('SignUpScreen')}>
-          <Text style={{color: allcolor.theme, marginLeft: wp(3)}}>Signup</Text>
+          <Text style={{color: allColor.theme, marginLeft: wp(3)}}>Signup</Text>
         </TouchableOpacity>
       </View>
     </View>

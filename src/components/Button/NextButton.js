@@ -4,18 +4,18 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {allcolor, allImage} from '../../constants';
+import {allColor, allImage} from '../../constants';
 
 const NextButton = ({txt}) => {
   return (
-    <View style={[style.container, {borderColor: allcolor.theme}]}>
+    <View style={[style.container, {borderColor: allColor.theme}]}>
       <Text
-        style={{fontWeight: 'bold', color: allcolor.theme, fontSize: wp(3)}}>
+        style={{fontWeight: 'bold', color: allColor.theme, fontSize: wp(3)}}>
         {txt}
       </Text>
       <Image
         resizeMode="contain"
-        style={[style.imgStyle, {tintColor: allcolor.theme}]}
+        style={[style.imgStyle, {tintColor: allColor.theme}]}
         source={allImage.rightarrow}
       />
     </View>

@@ -4,34 +4,34 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {allcolor} from '../../constants/';
+import {allColor} from '../../constants/';
 
 const InputText = ({
   text,
-  text1,
+  placeholder,
   txtInputOverride,
-  textValue,
-  onChangeUpdateText,
-  Visibility,
+  value,
+  onChangeText,
+  secureTextEntry,
 }) => {
   return (
     <View style={{marginTop: hp(1)}}>
-      <Text style={{color: allcolor.textColor}}>{text}</Text>
+      <Text style={{color: allColor.textColor}}>{text}</Text>
       <View style={{marginTop: hp(1)}}>
         <TextInput
-          secureTextEntry={Visibility}
-          value={textValue} // for name
-          placeholder={text1}
+          secureTextEntry={secureTextEntry}
+          value={value} // for name
+          placeholder={placeholder}
           style={[
             style.container,
             {
-              borderColor: allcolor.bordercolor,
-              color: allcolor.textColor,
+              borderColor: allColor.borderColor,
+              color: allColor.textColor,
 
               ...txtInputOverride,
             },
           ]}
-          onChangeText={val => onChangeUpdateText(val)} // to update state of setname
+          onChangeText={val => onChangeText(val)} // to update state of setname
         />
       </View>
     </View>
@@ -44,7 +44,7 @@ const style = StyleSheet.create({
     borderWidth: 1,
     height: hp(6),
     borderRadius: wp(2),
-    marginLeft: wp(0),
+
     paddingHorizontal: wp(3),
   },
 });

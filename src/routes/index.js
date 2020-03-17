@@ -20,7 +20,7 @@ const Stack = createStackNavigator();
 const MyStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="TabRoutes"
+      // initialRouteName="TabRoutes"
       screenOptions={{headerShown: false}}>
       <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
       <Stack.Screen name="SignInScreen" component={SignInScreen} />

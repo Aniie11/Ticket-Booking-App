@@ -4,7 +4,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {allImage, allcolor} from '../../constants';
+import {allImage, allColor} from '../../constants';
 import Card from '../../components/Card/Card';
 
 const selectingImage = [
@@ -84,7 +84,7 @@ const TheatreScreenComponent = ({img, txt, txt1, txt2, txt3}) => {
                       <View
                         style={[
                           style.container,
-                          {backgroundColor: allcolor.CircleColor},
+                          {backgroundColor: allColor.circleColor},
                         ]}>
                         <Image
                           resizeMode="center"

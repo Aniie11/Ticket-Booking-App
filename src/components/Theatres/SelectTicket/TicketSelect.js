@@ -4,7 +4,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {allcolor} from '../../../constants';
+import {allColor} from '../../../constants';
 
 const datas = [
   '1',
@@ -25,7 +25,7 @@ const datas = [
 ];
 const TicketSelect = ({txt, selectedTicket, selectTicket}) => {
   return (
-    <View style={[style.container, {borderColor: allcolor.bordercolor}]}>
+    <View style={[style.container, {borderColor: allColor.borderColor}]}>
       <Text style={style.txtStyle}>{txt}</Text>
       <View style={style.container1}>
         {datas.map((item, index) => {
@@ -38,8 +38,8 @@ const TicketSelect = ({txt, selectedTicket, selectTicket}) => {
                   style.container2,
                   {
                     backgroundColor:
-                      index === selectedTicket.index ? allcolor.theme : null,
-                    borderColor: allcolor.bordercolor,
+                      index === selectedTicket.index ? allColor.theme : null,
+                    borderColor: allColor.borderColor,
                   },
                 ]}>
                 <Text

@@ -4,7 +4,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {allcolor} from '../../constants';
+import {allColor} from '../../constants';
 
 const HeaderTop = ({onpress, text, leftArrow, rightArrow}) => {
   return (
@@ -25,7 +25,7 @@ const HeaderTop = ({onpress, text, leftArrow, rightArrow}) => {
           fontWeight: 'bold',
           textAlign: 'center',
           fontSize: wp(4),
-          color: allcolor.textColor,
+          color: allColor.textColor,
         }}>
         {text}
       </Text>

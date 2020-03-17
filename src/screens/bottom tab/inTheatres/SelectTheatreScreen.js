@@ -6,7 +6,7 @@ import {
 } from 'react-native-responsive-screen';
 import NextButton from '../../../components/Button/NextButton';
 import HeaderTop from '../../../components/Header/HeaderTop';
-import {allImage, allcolor, globalStyle} from '../../../constants';
+import {allImage, allColor, globalStyle} from '../../../constants';
 
 const selectTheatreDatas = [
   {
@@ -104,10 +104,10 @@ const SelectTheatreScreen = ({navigation, route}) => {
                       style.container5,
                       {
                         ...globalStyle.makeInCenter,
-                        borderColor: allcolor.bordercolor,
+                        borderColor: allColor.borderColor,
                         backgroundColor:
                           index === touchable.index
-                            ? allcolor.theme
+                            ? allColor.theme
                             : 'transparent',
                       },
                     ]}>

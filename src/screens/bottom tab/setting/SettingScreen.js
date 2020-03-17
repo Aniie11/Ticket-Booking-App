@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, ScrollView, StyleSheet, Image} from 'react-native';
 import HeaderTop from '../../../components/Header/HeaderTop';
-import {allImage, allcolor} from '../../../constants';
+import {allImage, allColor} from '../../../constants';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -77,13 +77,13 @@ const style = StyleSheet.create({
     alignItems: 'center',
   },
   style1: {
-    color: allcolor.theme,
+    color: allColor.theme,
     fontWeight: 'bold',
     fontSize: wp(4),
     marginBottom: hp(2),
   },
   style2: {
-    color: allcolor.theme,
+    color: allColor.theme,
     fontWeight: 'bold',
     fontSize: wp(4),
     marginBottom: hp(2),

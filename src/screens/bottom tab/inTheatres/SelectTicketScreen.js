@@ -12,7 +12,7 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import HeaderTop from '../../../components/Header/HeaderTop';
-import {allImage, allcolor, globalStyle} from '../../../constants';
+import {allImage, allColor, globalStyle} from '../../../constants';
 import TicketSelect from '../../../components/Theatres/SelectTicket/TicketSelect';
 import NextButton from '../../../components/Button/NextButton';
 
@@ -149,8 +149,8 @@ const SelectTicketScreen = ({navigation, route}) => {
                         style.container5,
                         {
                           backgroundColor:
-                            index === touch ? allcolor.theme : null,
-                          borderColor: allcolor.bordercolor,
+                            index === touch ? allColor.theme : null,
+                          borderColor: allColor.borderColor,
                         },
                       ]}>
                       <Text
