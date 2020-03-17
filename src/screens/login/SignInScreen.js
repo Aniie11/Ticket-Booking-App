@@ -6,7 +6,7 @@ import {
 } from 'react-native-responsive-screen';
 import InputText from '../../components/InputText/InputText';
 import Button from '../../components/Button/Button';
-import {allColor} from '../../constants';
+import {allColor, allImage} from '../../constants';
 import Card from '../../components/Card/Card';
 import HeaderTop from '../../components/Header/HeaderTop';
 
@@ -46,11 +46,7 @@ const SignInScreen = ({navigation}) => {
               <Image
                 resizeMode="contain"
                 style={{height: hp(6), width: wp(6)}}
-                source={
-                  visible
-                    ? require('../../resource/eye.png')
-                    : require('../../resource/eyelash.png')
-                }
+                source={visible ? allImage.eye : allImage.eyelash}
               />
             </TouchableOpacity>
           </View>

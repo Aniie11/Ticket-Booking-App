@@ -6,7 +6,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {allColor} from '../../constants';
+import {allColor, allImage} from '../../constants';
 import HeaderTop from '../../components/Header/HeaderTop';
 import Card from '../../components/Card/Card';
 import {
@@ -66,7 +66,7 @@ const SignUpScreen = ({navigation}) => {
                       tintColor: allColor.borderColor,
                       marginRight: wp(1),
                     }}
-                    source={require('../../resource/downarrow.png')}
+                    source={allImage.downarrow}
                   />
                 </View>
               </MenuTrigger>
